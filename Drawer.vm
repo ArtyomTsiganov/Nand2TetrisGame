@@ -1,0 +1,75 @@
+function Drawer.drawGrid 4
+push argument 0
+pop pointer 0
+push argument 1
+pop local 2
+push argument 2
+pop local 3
+push argument 1
+push argument 3
+push argument 4
+call Math.multiply 2
+add
+pop local 0
+push argument 2
+push argument 3
+push argument 4
+call Math.multiply 2
+add
+pop local 1
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push local 2
+push argument 2
+push local 2
+push local 1
+call Screen.drawLine 4
+pop temp 0
+label WHILE_EXP0
+push local 2
+push local 0
+eq
+not
+not
+if-goto WHILE_END0
+push local 2
+push argument 3
+add
+pop local 2
+push local 2
+push argument 2
+push local 2
+push local 1
+call Screen.drawLine 4
+pop temp 0
+goto WHILE_EXP0
+label WHILE_END0
+push argument 1
+push local 3
+push local 0
+push local 3
+call Screen.drawLine 4
+pop temp 0
+label WHILE_EXP1
+push local 3
+push local 1
+eq
+not
+not
+if-goto WHILE_END1
+push local 3
+push argument 3
+add
+pop local 3
+push argument 1
+push local 3
+push local 0
+push local 3
+call Screen.drawLine 4
+pop temp 0
+goto WHILE_EXP1
+label WHILE_END1
+push constant 0
+return

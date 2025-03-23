@@ -1,0 +1,12 @@
+class Main {
+    function void main() {
+        var Drawer d;
+        var GameRunner game;
+
+        do d.drawGrid(160, 32, 16, 12);
+
+        let game = game.new();
+        do game.run();
+        return;
+    }
+}

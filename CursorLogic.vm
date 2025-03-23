@@ -1,0 +1,174 @@
+function CursorLogic.new 0
+push constant 9
+call Memory.alloc 1
+pop pointer 0
+push constant 160
+pop this 0
+push constant 32
+pop this 1
+push constant 12
+pop this 2
+push constant 16
+pop this 3
+push constant 2
+pop this 4
+push constant 0
+pop this 5
+push constant 0
+pop this 6
+push constant 512
+pop this 7
+push constant 256
+pop this 8
+push pointer 0
+return
+function CursorLogic.drawCursor 0
+push argument 0
+pop pointer 0
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push this 5
+push this 6
+push this 5
+push this 3
+add
+push constant 1
+sub
+push this 6
+push this 3
+add
+push constant 1
+sub
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 5
+push this 4
+add
+push this 6
+push this 4
+add
+push this 5
+push this 3
+add
+push constant 1
+sub
+push this 4
+sub
+push this 6
+push this 3
+add
+push constant 1
+sub
+push this 4
+sub
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function CursorLogic.eraseCursor 0
+push argument 0
+pop pointer 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push this 5
+push this 6
+push this 5
+push this 3
+add
+push constant 1
+sub
+push this 6
+push this 3
+add
+push constant 1
+sub
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function CursorLogic.moveRight 0
+push argument 0
+pop pointer 0
+push this 5
+push this 3
+add
+push this 7
+lt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 5
+push this 3
+add
+pop this 5
+label IF_FALSE0
+push constant 0
+return
+function CursorLogic.moveLeft 0
+push argument 0
+pop pointer 0
+push this 5
+push this 3
+sub
+push constant 0
+lt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+return
+goto IF_END0
+label IF_FALSE0
+push this 5
+push this 3
+sub
+pop this 5
+label IF_END0
+push constant 0
+return
+function CursorLogic.moveDown 0
+push argument 0
+pop pointer 0
+push this 6
+push this 3
+add
+push this 8
+lt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 6
+push this 3
+add
+pop this 6
+label IF_FALSE0
+push constant 0
+return
+function CursorLogic.moveUp 0
+push argument 0
+pop pointer 0
+push this 6
+push this 3
+sub
+push constant 0
+lt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+return
+goto IF_END0
+label IF_FALSE0
+push this 6
+push this 3
+sub
+pop this 6
+label IF_END0
+push constant 0
+return

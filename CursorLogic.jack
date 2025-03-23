@@ -1,0 +1,72 @@
+class CursorLogic {
+    // interactive square
+    field int interX, interY, count;
+    // pointer square
+    field int size, padding;
+    // current 
+    field int x, y;
+    // screen size
+    field int w, h;
+
+    constructor CursorLogic new() {
+        let interX = 160;
+        let interY = 32;
+        let count = 12;
+
+        let size = 16;
+        let padding = 2;
+
+        let x = 0;
+        let y = 0;
+        
+        let w = 512;
+        let h = 256;
+        return this;
+    }
+
+    method void drawCursor() {
+        do Screen.setColor(true);
+        do Screen.drawRectangle(x, y, x + size - 1, y + size - 1);
+        do Screen.setColor(false);
+        do Screen.drawRectangle(x + padding, y + padding, x + size - 1 - padding, y + size - 1 - padding);
+        return;
+    }
+
+    method void eraseCursor() {
+        do Screen.setColor(false);
+        do Screen.drawRectangle(x, y, x + size - 1, y + size - 1);
+        return;
+    }
+
+    method void moveRight() {
+        if (x + size < w) {
+            let x = x + size;
+        }
+        return;
+    }
+    
+    method void moveLeft() {
+        if (x - size < 0) {
+            return;
+        } else {
+            let x = x - size;
+        }
+        return;
+    }
+
+    method void moveDown() {
+        if (y + size < h) {
+            let y = y + size;
+        }
+        return;
+    }
+    
+    method void moveUp() {
+        if (y - size < 0) {
+            return;
+        } else {
+            let y = y - size;
+        }
+        return;
+    }
+}

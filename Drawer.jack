@@ -1,0 +1,24 @@
+class Drawer {
+    method void drawGrid (int x, int y, int size, int count) {
+        var int x1, y1, xi, yi;
+        let xi = x;
+        let yi = y;
+        let x1 = x + (size * count);
+        let y1 = y + (size * count);
+
+        do Screen.setColor(true);
+
+        do Screen.drawLine(xi, y, xi, y1);
+        while (~(xi = x1)) {
+            let xi = xi + size;
+            do Screen.drawLine(xi, y, xi, y1);
+        }
+
+        do Screen.drawLine(x, yi, x1, yi);
+        while (~(yi = y1)) {
+            let yi = yi + size;
+            do Screen.drawLine(x, yi, x1, yi);
+        }
+        return;
+    }
+}
