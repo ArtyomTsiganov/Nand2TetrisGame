@@ -1,4 +1,17 @@
 class Drawer {
+    field int w, h;
+    
+    field int size, padding;
+
+    constructor Drawer new(int sz, int pad, int wi, int he) {
+        let size = sz;
+        let padding = pad;
+        
+        let w = wi;
+        let h = he;
+        return this;
+    }
+
     method void drawGrid (int x, int y, int size, int count) {
         var int x1, y1, xi, yi;
         let xi = x;
@@ -19,6 +32,49 @@ class Drawer {
             let yi = yi + size;
             do Screen.drawLine(x, yi, x1, yi);
         }
+        return;
+    }
+    
+    method void drawMap(Map map) {
+        var int x, y;
+        var boolean color;
+        
+        let x = 0;
+        let y = 0;
+
+        while (~(y = h)) {
+            while (~(x = w)) {
+                let color = map.get_cell(x, y);
+                do Screen.setColor(color);
+                do Screen.drawRectangle(x + padding, y + padding, x + size - 1 - padding, y + size - 1 - padding);
+                
+                let x = x + size;
+            }
+            let x = 0;
+            let y = y + size;
+        }
+        return;
+    }
+
+    method void drawCursor(CursorLogic cursor) {
+        var int x, y;
+        let x = cursor.getX();
+        let y = cursor.getY();
+        
+        do Screen.setColor(true);
+        do Screen.drawRectangle(x, y, x + size - 1, y + size - 1);
+        do Screen.setColor(false);
+        do Screen.drawRectangle(x + padding, y + padding, x + size - 1 - padding, y + size - 1 - padding);
+        return;
+    }
+
+    method void eraseCursor(CursorLogic cursor) 
+    {
+        var int x, y;
+        let x = cursor.getX();
+        let y = cursor.getY();
+        do Screen.setColor(false);
+        do Screen.drawRectangle(x, y, x + size - 1, y + size - 1);
         return;
     }
 }

@@ -1,0 +1,36 @@
+class Map {
+    field Array map;
+    field int n, m;
+    field int size;
+
+    constructor Map new(int cell_size, int w, int h) {
+        var int i;
+    
+        let m = (w / cell_size);
+        let n = (h / cell_size);
+        let size = cell_size;
+        let map = Array.new(n * m);
+
+        let i = n * m - 1;
+        while (~(i = 0)) {
+            let map[i] = false;
+            let i = i - 1;
+        }
+        return this;
+    }
+
+    method boolean get_cell (int x, int y) {
+        var int x1, y1;
+        let x1 = x / size;
+        let y1 = y / size;
+        return map[y1 * m + x1];
+    }
+
+    method void set_cell (int x, int y) {
+        var int x1, y1;
+        let x1 = x / size;
+        let y1 = y / size;
+        let map[y1 * m + x1] = ~map[y1 * m + x1];
+        return;
+    }
+}

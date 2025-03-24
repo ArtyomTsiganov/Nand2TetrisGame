@@ -1,3 +1,17 @@
+function Drawer.new 0
+push constant 4
+call Memory.alloc 1
+pop pointer 0
+push argument 0
+pop this 2
+push argument 1
+pop this 3
+push argument 2
+pop this 0
+push argument 3
+pop this 1
+push pointer 0
+return
 function Drawer.drawGrid 4
 push argument 0
 pop pointer 0
@@ -71,5 +85,154 @@ call Screen.drawLine 4
 pop temp 0
 goto WHILE_EXP1
 label WHILE_END1
+push constant 0
+return
+function Drawer.drawMap 3
+push argument 0
+pop pointer 0
+push constant 0
+pop local 0
+push constant 0
+pop local 1
+label WHILE_EXP0
+push local 1
+push this 1
+eq
+not
+not
+if-goto WHILE_END0
+label WHILE_EXP1
+push local 0
+push this 0
+eq
+not
+not
+if-goto WHILE_END1
+push argument 1
+push local 0
+push local 1
+call Map.get_cell 3
+pop local 2
+push local 2
+call Screen.setColor 1
+pop temp 0
+push local 0
+push this 3
+add
+push local 1
+push this 3
+add
+push local 0
+push this 2
+add
+push constant 1
+sub
+push this 3
+sub
+push local 1
+push this 2
+add
+push constant 1
+sub
+push this 3
+sub
+call Screen.drawRectangle 4
+pop temp 0
+push local 0
+push this 2
+add
+pop local 0
+goto WHILE_EXP1
+label WHILE_END1
+push constant 0
+pop local 0
+push local 1
+push this 2
+add
+pop local 1
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Drawer.drawCursor 2
+push argument 0
+pop pointer 0
+push argument 1
+call CursorLogic.getX 1
+pop local 0
+push argument 1
+call CursorLogic.getY 1
+pop local 1
+push constant 0
+not
+call Screen.setColor 1
+pop temp 0
+push local 0
+push local 1
+push local 0
+push this 2
+add
+push constant 1
+sub
+push local 1
+push this 2
+add
+push constant 1
+sub
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push local 0
+push this 3
+add
+push local 1
+push this 3
+add
+push local 0
+push this 2
+add
+push constant 1
+sub
+push this 3
+sub
+push local 1
+push this 2
+add
+push constant 1
+sub
+push this 3
+sub
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function Drawer.eraseCursor 2
+push argument 0
+pop pointer 0
+push argument 1
+call CursorLogic.getX 1
+pop local 0
+push argument 1
+call CursorLogic.getY 1
+pop local 1
+push constant 0
+call Screen.setColor 1
+pop temp 0
+push local 0
+push local 1
+push local 0
+push this 2
+add
+push constant 1
+sub
+push local 1
+push this 2
+add
+push constant 1
+sub
+call Screen.drawRectangle 4
+pop temp 0
 push constant 0
 return

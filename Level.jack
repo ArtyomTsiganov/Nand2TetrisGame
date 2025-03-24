@@ -1,0 +1,37 @@
+class Level {
+    // TODO
+    field Array arr;
+
+    method boolean get_cell(int x, int y) {
+        var String str;
+        let str = arr[x];
+        if (str[y] = 49) {
+            return true;
+        }
+        return false;
+    }
+
+    method void generateLevel(int lvl_id) {
+        let arr = Array.new(16);
+        let arr[0]  = "0000000000000000";
+        let arr[1]  = "0000000000000000";
+        let arr[2]  = "0000000000000000";
+        let arr[3]  = "0000000000000000";
+        let arr[4]  = "0000000000000000";
+        let arr[5]  = "0000000000000000";
+        let arr[6]  = "0000000000000000";
+        let arr[7]  = "0000000000000000";
+        let arr[8]  = "0000000000000000";
+        let arr[9]  = "0000000000000000";
+        let arr[10] = "0000000000000000";
+        let arr[11] = "0000000000000000";
+        let arr[12] = "0000000000000000";
+        let arr[13] = "0000000000000000";
+        let arr[14] = "0000000000000000";
+        let arr[15] = "0000000000000000";
+        let arr[16] = "0000001100000000";
+        return;
+    } 
+
+
+}

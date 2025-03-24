@@ -1,9 +1,23 @@
 class GameRunner {
     field CursorLogic cursor;
+    field Drawer drawer;
+    field Level level;
+    field Map map;
+
+    field int size, padding;
+    field int w, h;
 
     constructor GameRunner new() {
-        var CursorLogic cur;
-        let cursor = cur.new();
+        let size = 16;
+        let padding = 2;
+
+        let w = 512;
+        let h = 256;
+
+        let map = Map.new(size, w, h);
+        let drawer = Drawer.new(size, padding, w, h);
+        let cursor = CursorLogic.new(size, w, h);
+        
         return this;
     }
 
@@ -13,23 +27,24 @@ class GameRunner {
 
         let exit = false;
         while (~exit) {
-            do Sys.wait(100);
-            
+            do Sys.wait(200);
             while (key = 0) {
                 let key = Keyboard.keyPressed();
             }
             
-            do cursor.eraseCursor();
+            do drawer.eraseCursor(cursor);
 
             if (key = 81) {let exit = true;} // q key
-            if (key = 32) {let exit = true;} // space key TODO
+            if (key = 32) {do map.set_cell(cursor.getX(), cursor.getY());} // space key TODO
             if (key = 131) {do cursor.moveUp();} // up arrow key
             if (key = 133) {do cursor.moveDown();} // down arrow key
             if (key = 130) {do cursor.moveLeft();} // left arrow key
             if (key = 132) {do cursor.moveRight();} // right arrow key
 
 
-            do cursor.drawCursor();
+            do drawer.drawCursor(cursor);
+            do drawer.drawGrid(160, 32, 16, 12);
+            do drawer.drawMap(map);
             let key = 0;
         }
         return;
