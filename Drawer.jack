@@ -1,6 +1,7 @@
 class Drawer {
+    // размер экрана
     field int w, h;
-    
+    // размеры одной клетки, отступ
     field int size, padding;
 
     constructor Drawer new(int sz, int pad, int wi, int he) {
@@ -12,6 +13,7 @@ class Drawer {
         return this;
     }
 
+    // рисует сетку по цетру экрана, TODO: переделать или убрать
     method void drawGrid (int x, int y, int size, int count) {
         var int x1, y1, xi, yi;
         let xi = x;
@@ -35,6 +37,7 @@ class Drawer {
         return;
     }
     
+    // рисует всю карту
     method void drawMap(Map map) {
         var int x, y;
         var boolean color;
@@ -56,6 +59,7 @@ class Drawer {
         return;
     }
 
+    // отображение курсора
     method void drawCursor(CursorLogic cursor) {
         var int x, y;
         let x = cursor.getX();
@@ -67,7 +71,7 @@ class Drawer {
         do Screen.drawRectangle(x + padding, y + padding, x + size - 1 - padding, y + size - 1 - padding);
         return;
     }
-
+    // убрать курсор
     method void eraseCursor(CursorLogic cursor) 
     {
         var int x, y;

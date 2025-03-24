@@ -1,7 +1,7 @@
 class CursorLogic {
     // pointer square
     field int size;
-    // current 
+    // current position
     field int x, y;
     // screen size
     field int w, h;
@@ -16,11 +16,11 @@ class CursorLogic {
         let h = he;
         return this;
     }
-
+    // getter
     method int getX() {
         return x;
     }
-
+    // getter
     method int getY() {
         return y;
     }

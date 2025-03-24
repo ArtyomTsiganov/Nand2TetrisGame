@@ -1,4 +1,5 @@
 class GameRunner {
+    // init app game params
     field CursorLogic cursor;
     field Drawer drawer;
     field Level level;
@@ -20,20 +21,22 @@ class GameRunner {
         
         return this;
     }
-
+    // основной поток программы
     method void run () {
         var char key;
         var boolean exit;
 
         let exit = false;
         while (~exit) {
-            do Sys.wait(200);
+            // check events
             while (key = 0) {
                 let key = Keyboard.keyPressed();
             }
             
+            // before event
             do drawer.eraseCursor(cursor);
 
+            // event
             if (key = 81) {let exit = true;} // q key
             if (key = 32) {do map.set_cell(cursor.getX(), cursor.getY());} // space key TODO
             if (key = 131) {do cursor.moveUp();} // up arrow key
@@ -41,10 +44,13 @@ class GameRunner {
             if (key = 130) {do cursor.moveLeft();} // left arrow key
             if (key = 132) {do cursor.moveRight();} // right arrow key
 
+            do Sys.wait(200);
 
+            // after event
             do drawer.drawCursor(cursor);
             do drawer.drawGrid(160, 32, 16, 12);
             do drawer.drawMap(map);
+            
             let key = 0;
         }
         return;
