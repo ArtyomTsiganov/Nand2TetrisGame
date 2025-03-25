@@ -9,6 +9,7 @@ class Map {
         let m = (w / cell_size);
         let n = (h / cell_size);
         let size = cell_size;
+
         let map = Array.new(n * m);
 
         // заполняет весь массив -1
@@ -22,36 +23,26 @@ class Map {
     
     // getter
     method boolean get_cell (int x, int y) {
-        var int x1, y1;
-        let x1 = x / size;
-        let y1 = y / size;
-        return map[y1 * m + x1];
+        return map[y * m + x];
     }
 
     // setter
     method void set_cell (int x, int y, int val) {
-        var int x1, y1;
-        let x1 = x / size;
-        let y1 = y / size;
-        let map[y1 * m + x1] = val;
+        let map[y * m + x] = val;
         return;
     }
 
-    // setter
     method void change_cell (int x, int y) {
-        var int x1, y1;
-        let x1 = x / size;
-        let y1 = y / size;
-        if (map[y1 * m + x1] = -1) {
-            let map[y1 * m + x1] = -2;
+        if (map[y * m + x] = -1) {
+            let map[y * m + x] = -2;
             return;
         } 
-        if (map[y1 * m + x1] = -2) {
-            let map[y1 * m + x1] = -3;
+        if (map[y * m + x] = -2) {
+            let map[y * m + x] = -3;
             return;
         } 
-        if (map[y1 * m + x1] = -3) {
-            let map[y1 * m + x1] = -1;
+        if (map[y * m + x] = -3) {
+            let map[y * m + x] = -1;
             return;
         }
         return;

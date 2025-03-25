@@ -36,9 +36,10 @@ class Drawer {
         return;
     }
 
-    // рисует сетку по цетру экрана, TODO: переделать или убрать
     method void drawGrid (int x, int y, int size, int count) {
         var int x1, y1, xi, yi;
+        let x = size * x;
+        let y = size * y;
         let xi = x;
         let yi = y;
         let x1 = x + (size * count);
@@ -67,7 +68,7 @@ class Drawer {
 
         while (~(y = h)) {
             while (~(x = w)) {
-                let k = map.get_cell(x, y);
+                let k = map.get_cell(x / size, y / size);
                 if (k = -1) {
                     let color = false;
                     do Screen.setColor(color);
@@ -81,7 +82,6 @@ class Drawer {
                 if (k = -3) {
                     do drawPicture(x, y);
                 } 
-                
                 let x = x + size;
             }
             let x = 0;
@@ -93,8 +93,8 @@ class Drawer {
     // отображение курсора
     method void drawCursor(CursorLogic cursor) {
         var int x, y;
-        let x = cursor.getX();
-        let y = cursor.getY();
+        let x = size * cursor.getX();
+        let y = size * cursor.getY();
         
         do Screen.setColor(true);
         do Screen.drawRectangle(x, y, x + size - 1, y + size - 1);
@@ -106,8 +106,8 @@ class Drawer {
     method void eraseCursor(CursorLogic cursor) 
     {
         var int x, y;
-        let x = cursor.getX();
-        let y = cursor.getY();
+        let x = size * cursor.getX();
+        let y = size * cursor.getY();
         do Screen.setColor(false);
         do Screen.drawRectangle(x, y, x + size - 1, y + size - 1);
         return;

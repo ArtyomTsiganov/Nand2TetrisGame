@@ -1,25 +1,26 @@
 function Level.new 0
-push constant 7
+push constant 6
 call Memory.alloc 1
 pop pointer 0
 push argument 1
-pop this 6
-push argument 0
 pop this 5
-push argument 2
-pop this 3
-push argument 3
+push argument 4
+push argument 0
+call Math.divide 2
 pop this 4
-push constant 4
-push argument 1
+push argument 5
+push argument 0
+call Math.divide 2
+pop this 3
+push argument 2
+pop this 1
+push argument 3
+pop this 2
+push this 5
+push this 5
 call Math.multiply 2
 call Array.new 1
 pop this 0
-push constant 4
-push argument 1
-call Math.multiply 2
-call Array.new 1
-pop this 1
 push constant 0
 push this 0
 add
@@ -28,32 +29,24 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
-push constant 4
+push constant 1
 push this 0
 add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 0
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push constant 3
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
-push constant 0
-push this 1
-add
-push constant 2
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
-push constant 1
-push this 1
-add
-push constant 1
-pop temp 0
-pop pointer 1
-push temp 0
-pop that 0
-push constant 2
-push this 1
+push this 0
 add
 push constant 1
 pop temp 0
@@ -62,137 +55,88 @@ push temp 0
 pop that 0
 push pointer 0
 return
-function Level.check_done 0
+function Level.check_done 4
 push argument 0
 pop pointer 0
-push pointer 0
-push argument 1
-call Level.check_done_rows 2
-if-goto IF_TRUE0
-goto IF_FALSE0
-label IF_TRUE0
-push pointer 0
-push argument 1
-call Level.check_done_columns 2
-if-goto IF_TRUE1
-goto IF_FALSE1
-label IF_TRUE1
-push constant 0
-not
-return
-label IF_FALSE1
-label IF_FALSE0
-push constant 0
-return
-function Level.check_done_rows 5
-push argument 0
-pop pointer 0
-push constant 0
-pop local 4
-push constant 0
-pop local 0
-push constant 0
-pop local 1
 push constant 0
 pop local 2
 push constant 0
 pop local 3
+push constant 0
+pop local 0
+push constant 0
+pop local 1
 label WHILE_EXP0
 push local 1
-push this 4
+push this 5
 eq
 not
 not
 if-goto WHILE_END0
 label WHILE_EXP1
 push local 0
-push this 3
+push this 5
 eq
 not
 not
 if-goto WHILE_END1
-push argument 1
-push local 0
 push local 1
-call Map.get_cell 3
-push constant 2
-neg
+push this 5
+call Math.multiply 2
+push local 0
+add
+push this 0
+add
+pop pointer 1
+push that 0
+push constant 1
 eq
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
-push local 4
+push constant 0
+not
+pop local 2
+label IF_FALSE0
+push argument 1
+push this 1
+push local 0
+add
+push this 2
+push local 1
+add
+call Map.get_cell 3
+push constant 2
+neg
+eq
 if-goto IF_TRUE1
 goto IF_FALSE1
 label IF_TRUE1
 push constant 0
-return
-label IF_FALSE1
-push local 3
-push constant 1
-add
+not
 pop local 3
-push local 3
+label IF_FALSE1
 push local 2
-push this 0
-add
-pop pointer 1
-push that 0
-eq
+not
+push local 3
+and
+push local 2
+push local 3
+not
+and
+or
 if-goto IF_TRUE2
 goto IF_FALSE2
 label IF_TRUE2
 push constant 0
-pop local 3
-push local 2
-push constant 1
-add
-pop local 2
-push local 2
-push this 2
-eq
-if-goto IF_TRUE3
-goto IF_FALSE3
-label IF_TRUE3
-push constant 0
-not
 return
-label IF_FALSE3
-push constant 0
-not
-pop local 4
-label WHILE_EXP2
-push local 2
-push this 0
-add
-pop pointer 1
-push that 0
-push constant 0
-eq
-not
-if-goto WHILE_END2
-push local 2
-push constant 1
-add
-pop local 2
-push local 2
-push this 2
-eq
-if-goto IF_TRUE4
-goto IF_FALSE4
-label IF_TRUE4
-push constant 0
-not
-return
-label IF_FALSE4
-goto WHILE_EXP2
-label WHILE_END2
 label IF_FALSE2
-label IF_FALSE0
 push constant 0
-pop local 4
+pop local 2
+push constant 0
+pop local 3
 push local 0
-push this 5
+push constant 1
 add
 pop local 0
 goto WHILE_EXP1
@@ -200,133 +144,11 @@ label WHILE_END1
 push constant 0
 pop local 0
 push local 1
-push this 5
+push constant 1
 add
 pop local 1
 goto WHILE_EXP0
 label WHILE_END0
 push constant 0
-return
-function Level.check_done_columns 5
-push argument 0
-pop pointer 0
-push constant 0
-pop local 4
-push constant 0
-pop local 0
-push constant 0
-pop local 1
-push constant 0
-pop local 2
-push constant 0
-pop local 3
-label WHILE_EXP0
-push local 0
-push this 3
-eq
 not
-not
-if-goto WHILE_END0
-label WHILE_EXP1
-push local 1
-push this 4
-eq
-not
-not
-if-goto WHILE_END1
-push argument 1
-push local 0
-push local 1
-call Map.get_cell 3
-push constant 2
-neg
-eq
-if-goto IF_TRUE0
-goto IF_FALSE0
-label IF_TRUE0
-push local 4
-if-goto IF_TRUE1
-goto IF_FALSE1
-label IF_TRUE1
-push constant 0
-return
-label IF_FALSE1
-push local 3
-push constant 1
-add
-pop local 3
-push local 3
-push local 2
-push this 1
-add
-pop pointer 1
-push that 0
-eq
-if-goto IF_TRUE2
-goto IF_FALSE2
-label IF_TRUE2
-push constant 0
-pop local 3
-push constant 0
-not
-pop local 4
-push local 2
-push constant 1
-add
-pop local 2
-push local 2
-push this 2
-eq
-if-goto IF_TRUE3
-goto IF_FALSE3
-label IF_TRUE3
-push constant 0
-not
-return
-label IF_FALSE3
-label WHILE_EXP2
-push local 2
-push this 1
-add
-pop pointer 1
-push that 0
-push constant 0
-eq
-not
-if-goto WHILE_END2
-push local 2
-push constant 1
-add
-pop local 2
-push local 2
-push this 2
-eq
-if-goto IF_TRUE4
-goto IF_FALSE4
-label IF_TRUE4
-push constant 0
-not
-return
-label IF_FALSE4
-goto WHILE_EXP2
-label WHILE_END2
-label IF_FALSE2
-label IF_FALSE0
-push constant 0
-pop local 4
-push local 1
-push this 5
-add
-pop local 1
-goto WHILE_EXP1
-label WHILE_END1
-push constant 0
-pop local 1
-push local 0
-push this 5
-add
-pop local 0
-goto WHILE_EXP0
-label WHILE_END0
-push constant 0
 return

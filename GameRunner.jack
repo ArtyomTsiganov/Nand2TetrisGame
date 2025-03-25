@@ -10,7 +10,7 @@ class GameRunner {
     
     // active zone
     field int x0, y0;
-    field int cellCount;
+    field int cell_count;
 
     constructor GameRunner new() {
         let size = 16;
@@ -19,14 +19,14 @@ class GameRunner {
         let w = 512;
         let h = 256;
 
-        let x0 = size * 16;
-        let y0 = size * 4;
-        let cellCount = 12;
+        let x0 = 16;
+        let y0 = 4;
+        let cell_count = 12;
 
         let map = Map.new(size, w, h);
         let drawer = Drawer.new(size, padding, w, h);
-        let cursor = CursorLogic.new(x0, y0, size, cellCount);
-        let level = Level.new(size, cellCount, w, h);
+        let cursor = CursorLogic.new(x0, y0, size, cell_count);
+        let level = Level.new(size, cell_count, x0, y0, w, h);
         return this;
     }
 
@@ -52,11 +52,10 @@ class GameRunner {
             // after event
             do drawer.drawCursor(cursor);
             do drawer.drawMap(map);
-            do drawer.drawGrid(x0, y0, size, cellCount);
+            do drawer.drawGrid(x0, y0, size, cell_count);
             let key = 0;      
 
             if (level.check_done(map)) {
-                do Output.moveCursor(0);
                 do Output.printString("You won");
             }
 
