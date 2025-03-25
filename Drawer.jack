@@ -36,6 +36,292 @@ class Drawer {
         return;
     }
 
+    method void draw1(int x, int y) {
+        var int addr;
+        let addr = 16384 + (y * 32 + (x / 16)); 
+        do Memory.poke(addr +  0, 32767);
+        do Memory.poke(addr + 32, 32719);
+        do Memory.poke(addr + 64, 32719);
+        do Memory.poke(addr + 96, 32719);
+        do Memory.poke(addr + 128, 32719);
+        do Memory.poke(addr + 160, 32719);
+        do Memory.poke(addr + 192, 32719);
+        do Memory.poke(addr + 224, 32719);
+        do Memory.poke(addr + 256, 32719);
+        do Memory.poke(addr + 288, 32719);
+        do Memory.poke(addr + 320, 32719);
+        do Memory.poke(addr + 352, 32719);
+        do Memory.poke(addr + 384, 32719);
+        do Memory.poke(addr + 416, 32719);
+        do Memory.poke(addr + 448, 32719);
+        do Memory.poke(addr + 480, 32767);
+        return;
+    }
+
+    method void draw2(int x, int y) {
+        var int addr;
+        let addr = 16384 + (y * 32 + (x / 16)); 
+        do Memory.poke(addr +  0, 32767);
+        do Memory.poke(addr + 32, 24583);
+        do Memory.poke(addr + 64, 24583);
+        do Memory.poke(addr + 96, 32743);
+        do Memory.poke(addr + 128, 32743);
+        do Memory.poke(addr + 160, 32743);
+        do Memory.poke(addr + 192, 32743);
+        do Memory.poke(addr + 224, 24583);
+        do Memory.poke(addr + 256, 24583);
+        do Memory.poke(addr + 288, 26623);
+        do Memory.poke(addr + 320, 26623);
+        do Memory.poke(addr + 352, 26623);
+        do Memory.poke(addr + 384, 26623);
+        do Memory.poke(addr + 416, 24583);
+        do Memory.poke(addr + 448, 24583);
+        do Memory.poke(addr + 480, 32767);
+        return;
+    }
+
+    method void draw3(int x, int y) {
+        var int addr;
+        let addr = 16384 + (y * 32 + (x / 16)); 
+        do Memory.poke(addr +  0, 32767);
+        do Memory.poke(addr + 32, 24583);
+        do Memory.poke(addr + 64, 24583);
+        do Memory.poke(addr + 96, 32743);
+        do Memory.poke(addr + 128, 32743);
+        do Memory.poke(addr + 160, 32743);
+        do Memory.poke(addr + 192, 32743);
+        do Memory.poke(addr + 224, 24583);
+        do Memory.poke(addr + 256, 24583);
+        do Memory.poke(addr + 288, 32743);
+        do Memory.poke(addr + 320, 32743);
+        do Memory.poke(addr + 352, 32743);
+        do Memory.poke(addr + 384, 32743);
+        do Memory.poke(addr + 416, 24583);
+        do Memory.poke(addr + 448, 24583);
+        do Memory.poke(addr + 480, 32767);
+        return;
+    }
+
+    method void draw4(int x, int y) {
+        var int addr;
+        let addr = 16384 + (y * 32 + (x / 16)); 
+        do Memory.poke(addr +  0, 32767);
+        do Memory.poke(addr + 32, 26599);
+        do Memory.poke(addr + 64, 26599);
+        do Memory.poke(addr + 96, 26599);
+        do Memory.poke(addr + 128, 26599);
+        do Memory.poke(addr + 160, 26599);
+        do Memory.poke(addr + 192, 26599);
+        do Memory.poke(addr + 224, 24583);
+        do Memory.poke(addr + 256, 24583);
+        do Memory.poke(addr + 288, 32743);
+        do Memory.poke(addr + 320, 32743);
+        do Memory.poke(addr + 352, 32743);
+        do Memory.poke(addr + 384, 32743);
+        do Memory.poke(addr + 416, 32743);
+        do Memory.poke(addr + 448, 32743);
+        do Memory.poke(addr + 480, 32767);
+        return;
+    }
+
+    method void draw5(int x, int y) {
+        var int addr;
+        let addr = 16384 + (y * 32 + (x / 16)); 
+        do Memory.poke(addr +  0, 32767);
+        do Memory.poke(addr + 32, 24583);
+        do Memory.poke(addr + 64, 24583);
+        do Memory.poke(addr + 96, 26623);
+        do Memory.poke(addr + 128, 26623);
+        do Memory.poke(addr + 160, 26623);
+        do Memory.poke(addr + 192, 26623);
+        do Memory.poke(addr + 224, 24583);
+        do Memory.poke(addr + 256, 24583);
+        do Memory.poke(addr + 288, 32743);
+        do Memory.poke(addr + 320, 32743);
+        do Memory.poke(addr + 352, 32743);
+        do Memory.poke(addr + 384, 32743);
+        do Memory.poke(addr + 416, 24583);
+        do Memory.poke(addr + 448, 24583);
+        do Memory.poke(addr + 480, 32767);
+        return;
+    }
+
+    method void draw6(int x, int y) {
+        var int addr;
+        let addr = 16384 + (y * 32 + (x / 16)); 
+        do Memory.poke(addr +  0, 32767);
+        do Memory.poke(addr + 32, 24583);
+        do Memory.poke(addr + 64, 24583);
+        do Memory.poke(addr + 96, 26623);
+        do Memory.poke(addr + 128, 26623);
+        do Memory.poke(addr + 160, 26623);
+        do Memory.poke(addr + 192, 26623);
+        do Memory.poke(addr + 224, 24583);
+        do Memory.poke(addr + 256, 24583);
+        do Memory.poke(addr + 288, 26599);
+        do Memory.poke(addr + 320, 26599);
+        do Memory.poke(addr + 352, 26599);
+        do Memory.poke(addr + 384, 26599);
+        do Memory.poke(addr + 416, 24583);
+        do Memory.poke(addr + 448, 24583);
+        do Memory.poke(addr + 480, 32767);
+        return;
+    }
+
+    method void draw7(int x, int y) {
+        var int addr;
+        let addr = 16384 + (y * 32 + (x / 16)); 
+        do Memory.poke(addr +  0, 32767);
+        do Memory.poke(addr + 32, 24583);
+        do Memory.poke(addr + 64, 24583);
+        do Memory.poke(addr + 96, 32743);
+        do Memory.poke(addr + 128, 32743);
+        do Memory.poke(addr + 160, 32743);
+        do Memory.poke(addr + 192, 32743);
+        do Memory.poke(addr + 224, 32743);
+        do Memory.poke(addr + 256, 32743);
+        do Memory.poke(addr + 288, 32743);
+        do Memory.poke(addr + 320, 32743);
+        do Memory.poke(addr + 352, 32743);
+        do Memory.poke(addr + 384, 32743);
+        do Memory.poke(addr + 416, 32743);
+        do Memory.poke(addr + 448, 32743);
+        do Memory.poke(addr + 480, 32767);
+        return;
+    }
+
+    method void draw8(int x, int y) {
+        var int addr;
+        let addr = 16384 + (y * 32 + (x / 16)); 
+        do Memory.poke(addr +  0, 32767);
+        do Memory.poke(addr + 32, 24583);
+        do Memory.poke(addr + 64, 24583);
+        do Memory.poke(addr + 96, 26599);
+        do Memory.poke(addr + 128, 26599);
+        do Memory.poke(addr + 160, 26599);
+        do Memory.poke(addr + 192, 26599);
+        do Memory.poke(addr + 224, 24583);
+        do Memory.poke(addr + 256, 24583);
+        do Memory.poke(addr + 288, 26599);
+        do Memory.poke(addr + 320, 26599);
+        do Memory.poke(addr + 352, 26599);
+        do Memory.poke(addr + 384, 26599);
+        do Memory.poke(addr + 416, 24583);
+        do Memory.poke(addr + 448, 24583);
+        do Memory.poke(addr + 480, 32767);
+        return;
+    }
+
+    method void draw9(int x, int y) {
+        var int addr;
+        let addr = 16384 + (y * 32 + (x / 16)); 
+        do Memory.poke(addr +  0, 32767);
+        do Memory.poke(addr + 32, 24583);
+        do Memory.poke(addr + 64, 24583);
+        do Memory.poke(addr + 96, 26599);
+        do Memory.poke(addr + 128, 26599);
+        do Memory.poke(addr + 160, 26599);
+        do Memory.poke(addr + 192, 26599);
+        do Memory.poke(addr + 224, 24583);
+        do Memory.poke(addr + 256, 24583);
+        do Memory.poke(addr + 288, 32743);
+        do Memory.poke(addr + 320, 32743);
+        do Memory.poke(addr + 352, 32743);
+        do Memory.poke(addr + 384, 32743);
+        do Memory.poke(addr + 416, 24583);
+        do Memory.poke(addr + 448, 24583);
+        do Memory.poke(addr + 480, 32767);
+        return;
+    }
+
+    method void draw10(int x, int y) {
+        var int addr;
+        let addr = 16384 + (y * 32 + (x / 16)); 
+        do Memory.poke(addr +  0, 32767);
+        do Memory.poke(addr + 32, 26119);
+        do Memory.poke(addr + 64, 26119);
+        do Memory.poke(addr + 96, 26215);
+        do Memory.poke(addr + 128, 26215);
+        do Memory.poke(addr + 160, 26215);
+        do Memory.poke(addr + 192, 26215);
+        do Memory.poke(addr + 224, 26215);
+        do Memory.poke(addr + 256, 26215);
+        do Memory.poke(addr + 288, 26215);
+        do Memory.poke(addr + 320, 26215);
+        do Memory.poke(addr + 352, 26215);
+        do Memory.poke(addr + 384, 26215);
+        do Memory.poke(addr + 416, 26119);
+        do Memory.poke(addr + 448, 26119);
+        do Memory.poke(addr + 480, 32767);
+        return;
+    }
+
+    method void draw11(int x, int y) {
+        var int addr;
+        let addr = 16384 + (y * 32 + (x / 16)); 
+        do Memory.poke(addr +  0, 32767);
+        do Memory.poke(addr + 32, 29671);
+        do Memory.poke(addr + 64, 29671);
+        do Memory.poke(addr + 96, 29671);
+        do Memory.poke(addr + 128, 29671);
+        do Memory.poke(addr + 160, 29671);
+        do Memory.poke(addr + 192, 29671);
+        do Memory.poke(addr + 224, 29671);
+        do Memory.poke(addr + 256, 29671);
+        do Memory.poke(addr + 288, 29671);
+        do Memory.poke(addr + 320, 29671);
+        do Memory.poke(addr + 352, 29671);
+        do Memory.poke(addr + 384, 29671);
+        do Memory.poke(addr + 416, 29671);
+        do Memory.poke(addr + 448, 29671);
+        do Memory.poke(addr + 480, 32767);
+        return;
+    }
+
+    method void draw12(int x, int y) {
+        var int addr;
+        let addr = 16384 + (y * 32 + (x / 16)); 
+        do Memory.poke(addr +  0, 32767);
+        do Memory.poke(addr + 32, 26119);
+        do Memory.poke(addr + 64, 26119);
+        do Memory.poke(addr + 96, 29671);
+        do Memory.poke(addr + 128, 29671);
+        do Memory.poke(addr + 160, 29671);
+        do Memory.poke(addr + 192, 29671);
+        do Memory.poke(addr + 224, 26119);
+        do Memory.poke(addr + 256, 26119);
+        do Memory.poke(addr + 288, 26239);
+        do Memory.poke(addr + 320, 26239);
+        do Memory.poke(addr + 352, 26239);
+        do Memory.poke(addr + 384, 26239);
+        do Memory.poke(addr + 416, 26119);
+        do Memory.poke(addr + 448, 26119);
+        do Memory.poke(addr + 480, 32767);
+        return;
+    }
+
+    method void drawCross(int x, int y) {
+        var int addr;
+        let addr = 16384 + (y * 32 + (x / 16)); 
+        do Memory.poke(addr +  0, 32767);
+        do Memory.poke(addr + 32, 32767);
+        do Memory.poke(addr + 64, 20467);
+        do Memory.poke(addr + 96, 26599);
+        do Memory.poke(addr + 128, 29647);
+        do Memory.poke(addr + 160, 31135);
+        do Memory.poke(addr + 192, 31807);
+        do Memory.poke(addr + 224, 32383);
+        do Memory.poke(addr + 256, 31807);
+        do Memory.poke(addr + 288, 31135);
+        do Memory.poke(addr + 320, 29647);
+        do Memory.poke(addr + 352, 26599);
+        do Memory.poke(addr + 384, 20467);
+        do Memory.poke(addr + 416, 24571);
+        do Memory.poke(addr + 448, 32767);
+        do Memory.poke(addr + 480, 32767);
+        return;
+    }
+
     // рисует сетку по цетру экрана, TODO: переделать или убрать
     method void drawGrid (int x, int y, int size, int count) {
         var int x1, y1, xi, yi;
