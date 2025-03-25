@@ -12,6 +12,125 @@ push argument 3
 pop this 1
 push pointer 0
 return
+function Drawer.drawPicture 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 2
+push constant 32
+call Math.multiply 2
+push argument 1
+push constant 16
+call Math.divide 2
+add
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 1
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 1
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 1
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 1
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 1
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 1
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 1
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 1
+neg
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
 function Drawer.drawGrid 4
 push argument 0
 pop pointer 0
@@ -35,12 +154,6 @@ push constant 0
 not
 call Screen.setColor 1
 pop temp 0
-push local 2
-push argument 2
-push local 2
-push local 1
-call Screen.drawLine 4
-pop temp 0
 label WHILE_EXP0
 push local 2
 push local 0
@@ -49,23 +162,31 @@ not
 not
 if-goto WHILE_END0
 push local 2
+push argument 2
+push local 2
+push local 1
+push constant 1
+sub
+call Screen.drawLine 4
+pop temp 0
+push local 2
 push argument 3
 add
 pop local 2
 push local 2
+push constant 1
+sub
 push argument 2
 push local 2
+push constant 1
+sub
 push local 1
+push constant 1
+sub
 call Screen.drawLine 4
 pop temp 0
 goto WHILE_EXP0
 label WHILE_END0
-push argument 1
-push local 3
-push local 0
-push local 3
-call Screen.drawLine 4
-pop temp 0
 label WHILE_EXP1
 push local 3
 push local 1
@@ -73,21 +194,35 @@ eq
 not
 not
 if-goto WHILE_END1
+push argument 1
+push local 3
+push local 0
+push constant 1
+sub
+push local 3
+call Screen.drawLine 4
+pop temp 0
 push local 3
 push argument 3
 add
 pop local 3
 push argument 1
 push local 3
+push constant 1
+sub
 push local 0
+push constant 1
+sub
 push local 3
+push constant 1
+sub
 call Screen.drawLine 4
 pop temp 0
 goto WHILE_EXP1
 label WHILE_END1
 push constant 0
 return
-function Drawer.drawMap 3
+function Drawer.drawMap 4
 push argument 0
 pop pointer 0
 push constant 0
@@ -114,6 +249,15 @@ push local 1
 call Map.get_cell 3
 pop local 2
 push local 2
+push constant 1
+neg
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+pop local 3
+push local 3
 call Screen.setColor 1
 pop temp 0
 push local 0
@@ -138,6 +282,56 @@ push this 3
 sub
 call Screen.drawRectangle 4
 pop temp 0
+label IF_FALSE0
+push local 2
+push constant 2
+neg
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+not
+pop local 3
+push local 3
+call Screen.setColor 1
+pop temp 0
+push local 0
+push this 3
+add
+push local 1
+push this 3
+add
+push local 0
+push this 2
+add
+push constant 1
+sub
+push this 3
+sub
+push local 1
+push this 2
+add
+push constant 1
+sub
+push this 3
+sub
+call Screen.drawRectangle 4
+pop temp 0
+label IF_FALSE1
+push local 2
+push constant 3
+neg
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push pointer 0
+push local 0
+push local 1
+call Drawer.drawPicture 3
+pop temp 0
+label IF_FALSE2
 push local 0
 push this 2
 add

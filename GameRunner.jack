@@ -7,6 +7,10 @@ class GameRunner {
 
     field int size, padding;
     field int w, h;
+    
+    // active zone
+    field int x0, y0;
+    field int cellCount;
 
     constructor GameRunner new() {
         let size = 16;
@@ -15,43 +19,51 @@ class GameRunner {
         let w = 512;
         let h = 256;
 
+        let x0 = size * 16;
+        let y0 = size * 4;
+        let cellCount = 12;
+
         let map = Map.new(size, w, h);
         let drawer = Drawer.new(size, padding, w, h);
-        let cursor = CursorLogic.new(size, w, h);
-        
+        let cursor = CursorLogic.new(x0, y0, size, cellCount);
+        let level = Level.new(size, cellCount, w, h);
         return this;
     }
+
     // основной поток программы
     method void run () {
         var char key;
         var boolean exit;
 
         let exit = false;
-        while (~exit) {
-            // check events
-            while (key = 0) {
-                let key = Keyboard.keyPressed();
-            }
-            
+        while (~exit) {    
+            do Sys.wait(200);         
             // before event
             do drawer.eraseCursor(cursor);
 
             // event
             if (key = 81) {let exit = true;} // q key
-            if (key = 32) {do map.set_cell(cursor.getX(), cursor.getY());} // space key TODO
+            if (key = 32) {do map.change_cell(cursor.getX(), cursor.getY());} // space key TODO
             if (key = 131) {do cursor.moveUp();} // up arrow key
             if (key = 133) {do cursor.moveDown();} // down arrow key
             if (key = 130) {do cursor.moveLeft();} // left arrow key
             if (key = 132) {do cursor.moveRight();} // right arrow key
 
-            do Sys.wait(200);
-
             // after event
             do drawer.drawCursor(cursor);
-            do drawer.drawGrid(160, 32, 16, 12);
             do drawer.drawMap(map);
-            
-            let key = 0;
+            do drawer.drawGrid(x0, y0, size, cellCount);
+            let key = 0;      
+
+            if (level.check_done(map)) {
+                do Output.moveCursor(0);
+                do Output.printString("You won");
+            }
+
+            // check events
+            while (key = 0) {
+                let key = Keyboard.keyPressed();
+            }
         }
         return;
     }

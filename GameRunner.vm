@@ -1,5 +1,5 @@
 function GameRunner.new 0
-push constant 8
+push constant 11
 call Memory.alloc 1
 pop pointer 0
 push constant 16
@@ -11,6 +11,16 @@ pop this 6
 push constant 256
 pop this 7
 push this 4
+push constant 16
+call Math.multiply 2
+pop this 8
+push this 4
+push constant 4
+call Math.multiply 2
+pop this 9
+push constant 12
+pop this 10
+push this 4
 push this 6
 push this 7
 call Map.new 3
@@ -21,11 +31,18 @@ push this 6
 push this 7
 call Drawer.new 4
 pop this 1
+push this 8
+push this 9
 push this 4
+push this 10
+call CursorLogic.new 4
+pop this 0
+push this 4
+push this 10
 push this 6
 push this 7
-call CursorLogic.new 3
-pop this 0
+call Level.new 4
+pop this 2
 push pointer 0
 return
 function GameRunner.run 2
@@ -41,16 +58,6 @@ if-goto WHILE_END0
 push constant 200
 call Sys.wait 1
 pop temp 0
-label WHILE_EXP1
-push local 0
-push constant 0
-eq
-not
-if-goto WHILE_END1
-call Keyboard.keyPressed 0
-pop local 0
-goto WHILE_EXP1
-label WHILE_END1
 push this 1
 push this 0
 call Drawer.eraseCursor 2
@@ -76,7 +83,7 @@ push this 0
 call CursorLogic.getX 1
 push this 0
 call CursorLogic.getY 1
-call Map.set_cell 3
+call Map.change_cell 3
 pop temp 0
 label IF_FALSE1
 push local 0
@@ -124,18 +131,56 @@ push this 0
 call Drawer.drawCursor 2
 pop temp 0
 push this 1
-push constant 160
-push constant 32
-push constant 16
-push constant 12
-call Drawer.drawGrid 5
-pop temp 0
-push this 1
 push this 3
 call Drawer.drawMap 2
 pop temp 0
+push this 1
+push this 8
+push this 9
+push this 4
+push this 10
+call Drawer.drawGrid 5
+pop temp 0
 push constant 0
 pop local 0
+push this 2
+push this 3
+call Level.check_done 2
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push constant 0
+call Output.moveCursor 1
+pop temp 0
+push constant 7
+call String.new 1
+push constant 89
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 117
+call String.appendChar 2
+push constant 32
+call String.appendChar 2
+push constant 119
+call String.appendChar 2
+push constant 111
+call String.appendChar 2
+push constant 110
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+label IF_FALSE6
+label WHILE_EXP1
+push local 0
+push constant 0
+eq
+not
+if-goto WHILE_END1
+call Keyboard.keyPressed 0
+pop local 0
+goto WHILE_EXP1
+label WHILE_END1
 goto WHILE_EXP0
 label WHILE_END0
 push constant 0

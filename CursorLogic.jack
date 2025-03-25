@@ -3,19 +3,24 @@ class CursorLogic {
     field int size;
     // current position
     field int x, y;
-    // screen size
-    field int w, h;
+    // active zone
+    field int left_x, left_y;
+    field int right_x, right_y;
 
-    constructor CursorLogic new(int sz, int wi, int he) {
+    constructor CursorLogic new(int x0, int y0, int sz, int cnt) {
         let size = sz;
 
-        let x = 0;
-        let y = 0;
+        let x = x0;
+        let y = y0;
         
-        let w = wi;
-        let h = he;
+        let left_x = x0;
+        let left_y = y0;
+
+        let right_x = sz * cnt + x0;
+        let right_y = sz * cnt + y0;
         return this;
     }
+    
     // getter
     method int getX() {
         return x;
@@ -26,14 +31,14 @@ class CursorLogic {
     }
 
     method void moveRight() {
-        if (x + size < w) {
+        if (x + size < right_x) {
             let x = x + size;
         }
         return;
     }
     
     method void moveLeft() {
-        if (x - size < 0) {
+        if (x - size < left_x) {
             return;
         } else {
             let x = x - size;
@@ -42,14 +47,14 @@ class CursorLogic {
     }
 
     method void moveDown() {
-        if (y + size < h) {
+        if (y + size < right_y) {
             let y = y + size;
         }
         return;
     }
     
     method void moveUp() {
-        if (y - size < 0) {
+        if (y - size < left_y) {
             return;
         } else {
             let y = y - size;

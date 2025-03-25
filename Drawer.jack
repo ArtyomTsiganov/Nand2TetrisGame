@@ -13,6 +13,29 @@ class Drawer {
         return this;
     }
 
+    // Нужно скопировать метод, переименовать, и вместо -1, вставить получившиеся числа.
+    method void drawPicture(int x, int y) {
+        var int addr;
+        let addr = 16384 + (y * 32 + (x / 16)); 
+        do Memory.poke(addr +  0, -1);
+        do Memory.poke(addr + 32, 0);
+        do Memory.poke(addr + 64, -1);
+        do Memory.poke(addr + 96, 0);
+        do Memory.poke(addr + 128, -1);
+        do Memory.poke(addr + 160, 0);
+        do Memory.poke(addr + 192, -1);
+        do Memory.poke(addr + 224, 0);
+        do Memory.poke(addr + 256, -1);
+        do Memory.poke(addr + 288, 0);
+        do Memory.poke(addr + 320, -1);
+        do Memory.poke(addr + 352, 0);
+        do Memory.poke(addr + 384, -1);
+        do Memory.poke(addr + 416, 0);
+        do Memory.poke(addr + 448, -1);
+        do Memory.poke(addr + 480, 0);
+        return;
+    }
+
     // рисует сетку по цетру экрана, TODO: переделать или убрать
     method void drawGrid (int x, int y, int size, int count) {
         var int x1, y1, xi, yi;
@@ -20,26 +43,23 @@ class Drawer {
         let yi = y;
         let x1 = x + (size * count);
         let y1 = y + (size * count);
-
         do Screen.setColor(true);
-
-        do Screen.drawLine(xi, y, xi, y1);
         while (~(xi = x1)) {
+            do Screen.drawLine(xi, y, xi, y1 - 1);
             let xi = xi + size;
-            do Screen.drawLine(xi, y, xi, y1);
+            do Screen.drawLine(xi - 1, y, xi - 1, y1 - 1);
         }
-
-        do Screen.drawLine(x, yi, x1, yi);
         while (~(yi = y1)) {
+            do Screen.drawLine(x, yi, x1 - 1, yi);
             let yi = yi + size;
-            do Screen.drawLine(x, yi, x1, yi);
+            do Screen.drawLine(x, yi - 1, x1 - 1, yi - 1);
         }
         return;
     }
     
     // рисует всю карту
     method void drawMap(Map map) {
-        var int x, y;
+        var int x, y, k;
         var boolean color;
         
         let x = 0;
@@ -47,9 +67,20 @@ class Drawer {
 
         while (~(y = h)) {
             while (~(x = w)) {
-                let color = map.get_cell(x, y);
-                do Screen.setColor(color);
-                do Screen.drawRectangle(x + padding, y + padding, x + size - 1 - padding, y + size - 1 - padding);
+                let k = map.get_cell(x, y);
+                if (k = -1) {
+                    let color = false;
+                    do Screen.setColor(color);
+                    do Screen.drawRectangle(x + padding, y + padding, x + size - 1 - padding, y + size - 1 - padding);
+                }
+                if (k = -2) {
+                    let color = true;
+                    do Screen.setColor(color);
+                    do Screen.drawRectangle(x + padding, y + padding, x + size - 1 - padding, y + size - 1 - padding);
+                } 
+                if (k = -3) {
+                    do drawPicture(x, y);
+                } 
                 
                 let x = x + size;
             }

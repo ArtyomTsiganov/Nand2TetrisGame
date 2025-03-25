@@ -1,37 +1,122 @@
 class Level {
-    // TODO
-    field Array arr;
+    // строки в формате (4 elems) x count, где каждая строка предсталяет собой
+    field Array rows;
+    field Array columns;
+    field int size_rc;
 
-    method boolean get_cell(int x, int y) {
-        var String str;
-        let str = arr[x];
-        if (str[y] = 49) {
-            return true;
+    field int w, h;
+    field int size, cellCount;
+
+    constructor Level new(int sz, int count, int w1, int h1) {
+        let cellCount = count;
+        let size = sz;
+        let w = w1;
+        let h = h1;
+
+        let rows = Array.new(4 * count);
+        let columns = Array.new(4 * count);
+        // тут в ручную нужно завести цифры рисунка
+        let rows[0] = 1;
+        let rows[4] = 3;
+
+        let columns[0] = 2;
+        let columns[1] = 1;
+        let columns[2] = 1;
+        
+        return this;
+    }
+    
+
+    // TODO сделать рабочим код снизу
+    method boolean check_done(Map map) {
+        if (check_done_rows(map)){
+            if (check_done_columns(map)) {
+                return true;
+            }
         }
         return false;
     }
 
-    method void generateLevel(int lvl_id) {
-        let arr = Array.new(16);
-        let arr[0]  = "0000000000000000";
-        let arr[1]  = "0000000000000000";
-        let arr[2]  = "0000000000000000";
-        let arr[3]  = "0000000000000000";
-        let arr[4]  = "0000000000000000";
-        let arr[5]  = "0000000000000000";
-        let arr[6]  = "0000000000000000";
-        let arr[7]  = "0000000000000000";
-        let arr[8]  = "0000000000000000";
-        let arr[9]  = "0000000000000000";
-        let arr[10] = "0000000000000000";
-        let arr[11] = "0000000000000000";
-        let arr[12] = "0000000000000000";
-        let arr[13] = "0000000000000000";
-        let arr[14] = "0000000000000000";
-        let arr[15] = "0000000000000000";
-        let arr[16] = "0000001100000000";
-        return;
-    } 
+    method boolean check_done_rows(Map map) {
+        var int x, y, i, k;
+        var boolean flag;
 
+        let flag = false;
+        let x = 0;
+        let y = 0;
+        let i = 0;
+        let k = 0;
 
+        while (~(y = h)) {
+            while (~(x = w)) {        
+                if (map.get_cell(x, y) = -2) {
+                    if (flag) {
+                        return false;
+                    }
+                    let k = k + 1;
+                    if (k = rows[i]) {
+                        let k = 0;
+                        let i = i + 1;
+                        if (i = size_rc) {
+                            return true;
+                        }
+                        let flag = true;
+                        while (rows[i] = 0) {
+                            let i = i + 1;
+                            if (i = size_rc) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+                let flag = false;
+                let x = x + size;
+            }
+            let x = 0;
+            let y = y + size;
+        }
+        return false;
+    }
+
+    method boolean check_done_columns(Map map) {
+        var int x, y, i, k;
+        var boolean flag;
+
+        let flag = false;
+        let x = 0;
+        let y = 0;
+        let i = 0;
+        let k = 0;
+
+        while (~(x = w)) {
+            while (~(y = h)) {        
+                if (map.get_cell(x, y) = -2) {
+                    if (flag) {
+                        return false;
+                    }
+                    let k = k + 1;
+                    if (k = columns[i]) {
+                        let k = 0;
+                        let flag = true;
+
+                        let i = i + 1;
+                        if (i = size_rc) {
+                            return true;
+                        }
+                        while (columns[i] = 0) {
+                            let i = i + 1;
+                            if (i = size_rc) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+                let flag = false;
+                let y = y + size;
+            }
+            let y = 0;
+            let x = x + size;
+        }
+        return false;
+    }
 }

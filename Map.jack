@@ -11,14 +11,15 @@ class Map {
         let size = cell_size;
         let map = Array.new(n * m);
 
-        // заполняет весь массив 0
+        // заполняет весь массив -1
         let i = n * m - 1;
         while (~(i = 0)) {
-            let map[i] = false;
+            let map[i] = -1;
             let i = i - 1;
         }
         return this;
     }
+    
     // getter
     method boolean get_cell (int x, int y) {
         var int x1, y1;
@@ -26,12 +27,33 @@ class Map {
         let y1 = y / size;
         return map[y1 * m + x1];
     }
+
     // setter
-    method void set_cell (int x, int y) {
+    method void set_cell (int x, int y, int val) {
         var int x1, y1;
         let x1 = x / size;
         let y1 = y / size;
-        let map[y1 * m + x1] = ~map[y1 * m + x1];
+        let map[y1 * m + x1] = val;
+        return;
+    }
+
+    // setter
+    method void change_cell (int x, int y) {
+        var int x1, y1;
+        let x1 = x / size;
+        let y1 = y / size;
+        if (map[y1 * m + x1] = -1) {
+            let map[y1 * m + x1] = -2;
+            return;
+        } 
+        if (map[y1 * m + x1] = -2) {
+            let map[y1 * m + x1] = -3;
+            return;
+        } 
+        if (map[y1 * m + x1] = -3) {
+            let map[y1 * m + x1] = -1;
+            return;
+        }
         return;
     }
 }
