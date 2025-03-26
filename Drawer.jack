@@ -367,7 +367,43 @@ class Drawer {
                     do Screen.drawRectangle(x + padding, y + padding, x + size - 1 - padding, y + size - 1 - padding);
                 } 
                 if (k = -3) {
-                    do drawPicture(x, y);
+                    do drawCross(x, y);
+                } 
+                if (k = 1) {
+                    do draw1(x, y);
+                } 
+                if (k = 2) {
+                    do draw2(x, y);
+                } 
+                if (k = 3) {
+                    do draw3(x, y);
+                } 
+                if (k = 4) {
+                    do draw4(x, y);
+                } 
+                if (k = 5) {
+                    do draw5(x, y);
+                } 
+                if (k = 6) {
+                    do draw6(x, y);
+                } 
+                if (k = 7) {
+                    do draw7(x, y);
+                } 
+                if (k = 8) {
+                    do draw8(x, y);
+                } 
+                if (k = 9) {
+                    do draw9(x, y);
+                } 
+                if (k = 10) {
+                    do draw10(x, y);
+                } 
+                if (k = 11) {
+                    do draw11(x, y);
+                } 
+                if (k = 12) {
+                    do draw12(x, y);
                 } 
                 let x = x + size;
             }

@@ -131,6 +131,1449 @@ call Memory.poke 2
 pop temp 0
 push constant 0
 return
+function Drawer.draw1 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 2
+push constant 32
+call Math.multiply 2
+push argument 1
+push constant 16
+call Math.divide 2
+add
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 32719
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 32719
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 32719
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 32719
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 32719
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 32719
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 32719
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 32719
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 32719
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 32719
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 32719
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 32719
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 32719
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 32719
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Drawer.draw2 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 2
+push constant 32
+call Math.multiply 2
+push argument 1
+push constant 16
+call Math.divide 2
+add
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 26623
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 26623
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 26623
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 26623
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Drawer.draw3 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 2
+push constant 32
+call Math.multiply 2
+push argument 1
+push constant 16
+call Math.divide 2
+add
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Drawer.draw4 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 2
+push constant 32
+call Math.multiply 2
+push argument 1
+push constant 16
+call Math.divide 2
+add
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Drawer.draw5 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 2
+push constant 32
+call Math.multiply 2
+push argument 1
+push constant 16
+call Math.divide 2
+add
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 26623
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 26623
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 26623
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 26623
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Drawer.draw6 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 2
+push constant 32
+call Math.multiply 2
+push argument 1
+push constant 16
+call Math.divide 2
+add
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 26623
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 26623
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 26623
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 26623
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Drawer.draw7 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 2
+push constant 32
+call Math.multiply 2
+push argument 1
+push constant 16
+call Math.divide 2
+add
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Drawer.draw8 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 2
+push constant 32
+call Math.multiply 2
+push argument 1
+push constant 16
+call Math.divide 2
+add
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Drawer.draw9 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 2
+push constant 32
+call Math.multiply 2
+push argument 1
+push constant 16
+call Math.divide 2
+add
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 32743
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 24583
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Drawer.draw10 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 2
+push constant 32
+call Math.multiply 2
+push argument 1
+push constant 16
+call Math.divide 2
+add
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 26119
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 26119
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 26215
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 26215
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 26215
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 26215
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 26215
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 26215
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 26215
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 26215
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 26215
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 26215
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 26119
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 26119
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Drawer.draw11 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 2
+push constant 32
+call Math.multiply 2
+push argument 1
+push constant 16
+call Math.divide 2
+add
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Drawer.draw12 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 2
+push constant 32
+call Math.multiply 2
+push argument 1
+push constant 16
+call Math.divide 2
+add
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 26119
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 26119
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 29671
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 26119
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 26119
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 26239
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 26239
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 26239
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 26239
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 26119
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 26119
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Drawer.drawCross 1
+push argument 0
+pop pointer 0
+push constant 16384
+push argument 2
+push constant 32
+call Math.multiply 2
+push argument 1
+push constant 16
+call Math.divide 2
+add
+add
+pop local 0
+push local 0
+push constant 0
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 20467
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 29647
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 31135
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 31807
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 32383
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 31807
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 31135
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 29647
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 26599
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 20467
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 416
+add
+push constant 24571
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 448
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 480
+add
+push constant 32767
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
 function Drawer.drawGrid 4
 push argument 0
 pop pointer 0
@@ -341,9 +1784,153 @@ label IF_TRUE2
 push pointer 0
 push local 0
 push local 1
-call Drawer.drawPicture 3
+call Drawer.drawCross 3
 pop temp 0
 label IF_FALSE2
+push local 2
+push constant 1
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push pointer 0
+push local 0
+push local 1
+call Drawer.draw1 3
+pop temp 0
+label IF_FALSE3
+push local 2
+push constant 2
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push pointer 0
+push local 0
+push local 1
+call Drawer.draw2 3
+pop temp 0
+label IF_FALSE4
+push local 2
+push constant 3
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push pointer 0
+push local 0
+push local 1
+call Drawer.draw3 3
+pop temp 0
+label IF_FALSE5
+push local 2
+push constant 4
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push pointer 0
+push local 0
+push local 1
+call Drawer.draw4 3
+pop temp 0
+label IF_FALSE6
+push local 2
+push constant 5
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push pointer 0
+push local 0
+push local 1
+call Drawer.draw5 3
+pop temp 0
+label IF_FALSE7
+push local 2
+push constant 6
+eq
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
+push pointer 0
+push local 0
+push local 1
+call Drawer.draw6 3
+pop temp 0
+label IF_FALSE8
+push local 2
+push constant 7
+eq
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
+push pointer 0
+push local 0
+push local 1
+call Drawer.draw7 3
+pop temp 0
+label IF_FALSE9
+push local 2
+push constant 8
+eq
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
+push pointer 0
+push local 0
+push local 1
+call Drawer.draw8 3
+pop temp 0
+label IF_FALSE10
+push local 2
+push constant 9
+eq
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push pointer 0
+push local 0
+push local 1
+call Drawer.draw9 3
+pop temp 0
+label IF_FALSE11
+push local 2
+push constant 10
+eq
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push pointer 0
+push local 0
+push local 1
+call Drawer.draw10 3
+pop temp 0
+label IF_FALSE12
+push local 2
+push constant 11
+eq
+if-goto IF_TRUE13
+goto IF_FALSE13
+label IF_TRUE13
+push pointer 0
+push local 0
+push local 1
+call Drawer.draw11 3
+pop temp 0
+label IF_FALSE13
+push local 2
+push constant 12
+eq
+if-goto IF_TRUE14
+goto IF_FALSE14
+label IF_TRUE14
+push pointer 0
+push local 0
+push local 1
+call Drawer.draw12 3
+pop temp 0
+label IF_FALSE14
 push local 0
 push this 2
 add

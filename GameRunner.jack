@@ -20,13 +20,15 @@ class GameRunner {
         let h = 256;
 
         let x0 = 16;
-        let y0 = 4;
-        let cell_count = 12;
+        let y0 = 5;
+        let cell_count = 10;
 
         let map = Map.new(size, w, h);
         let drawer = Drawer.new(size, padding, w, h);
         let cursor = CursorLogic.new(x0, y0, size, cell_count);
         let level = Level.new(size, cell_count, x0, y0, w, h);
+        do level.write_rows(map);
+        do level.write_columns(map);
         return this;
     }
 
@@ -57,6 +59,10 @@ class GameRunner {
 
             if (level.check_done(map)) {
                 do Output.printString("You won");
+                while (key = 0) {
+                    do Sys.wait(1000);
+                }
+
             }
 
             // check events
