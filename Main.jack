@@ -2,7 +2,7 @@ class Main {
     function void main() {
         var GameRunner game;
 
-        let game = game.new();
+        let game = GameRunner.new();
         do game.run();
         return;
     }

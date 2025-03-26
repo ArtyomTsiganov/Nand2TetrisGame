@@ -134,6 +134,14 @@ return
 function Drawer.drawGrid 4
 push argument 0
 pop pointer 0
+push argument 3
+push argument 1
+call Math.multiply 2
+pop argument 1
+push argument 3
+push argument 2
+call Math.multiply 2
+pop argument 2
 push argument 1
 pop local 2
 push argument 2
@@ -245,7 +253,11 @@ not
 if-goto WHILE_END1
 push argument 1
 push local 0
+push this 2
+call Math.divide 2
 push local 1
+push this 2
+call Math.divide 2
 call Map.get_cell 3
 pop local 2
 push local 2
@@ -351,11 +363,15 @@ return
 function Drawer.drawCursor 2
 push argument 0
 pop pointer 0
+push this 2
 push argument 1
 call CursorLogic.getX 1
+call Math.multiply 2
 pop local 0
+push this 2
 push argument 1
 call CursorLogic.getY 1
+call Math.multiply 2
 pop local 1
 push constant 0
 not
@@ -405,11 +421,15 @@ return
 function Drawer.eraseCursor 2
 push argument 0
 pop pointer 0
+push this 2
 push argument 1
 call CursorLogic.getX 1
+call Math.multiply 2
 pop local 0
+push this 2
 push argument 1
 call CursorLogic.getY 1
+call Math.multiply 2
 pop local 1
 push constant 0
 call Screen.setColor 1

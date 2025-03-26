@@ -10,13 +10,9 @@ push constant 512
 pop this 6
 push constant 256
 pop this 7
-push this 4
 push constant 16
-call Math.multiply 2
 pop this 8
-push this 4
 push constant 4
-call Math.multiply 2
 pop this 9
 push constant 12
 pop this 10
@@ -39,9 +35,11 @@ call CursorLogic.new 4
 pop this 0
 push this 4
 push this 10
+push this 8
+push this 9
 push this 6
 push this 7
-call Level.new 4
+call Level.new 6
 pop this 2
 push pointer 0
 return
@@ -149,9 +147,6 @@ call Level.check_done 2
 if-goto IF_TRUE6
 goto IF_FALSE6
 label IF_TRUE6
-push constant 0
-call Output.moveCursor 1
-pop temp 0
 push constant 7
 call String.new 1
 push constant 89

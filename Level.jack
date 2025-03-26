@@ -1,122 +1,54 @@
 class Level {
     // строки в формате (4 elems) x count, где каждая строка предсталяет собой
-    field Array rows;
-    field Array columns;
-    field int size_rc;
+    field Array level;
+    
+    field int x0, y0;
+    field int n, m;
+    field int cell_count;
 
-    field int w, h;
-    field int size, cellCount;
+    constructor Level new(int cell_size, int count, int x, int y, int w, int h) {
+        let cell_count = count;
+        let m = (w / cell_size);
+        let n = (h / cell_size);
+        let x0 = x;
+        let y0 = y;
 
-    constructor Level new(int sz, int count, int w1, int h1) {
-        let cellCount = count;
-        let size = sz;
-        let w = w1;
-        let h = h1;
-
-        let rows = Array.new(4 * count);
-        let columns = Array.new(4 * count);
+        let level = Array.new(cell_count * cell_count);
         // тут в ручную нужно завести цифры рисунка
-        let rows[0] = 1;
-        let rows[4] = 3;
-
-        let columns[0] = 2;
-        let columns[1] = 1;
-        let columns[2] = 1;
-        
+        let level[0] = 1;
+        let level[1] = 1;
+        let level[2] = 1;
+        let level[3] = 1;
         return this;
     }
     
-
-    // TODO сделать рабочим код снизу
+    
     method boolean check_done(Map map) {
-        if (check_done_rows(map)){
-            if (check_done_columns(map)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    method boolean check_done_rows(Map map) {
-        var int x, y, i, k;
-        var boolean flag;
-
-        let flag = false;
+        var int x, y;
+        var boolean f1, f2;
+        let f1 = false;
+        let f2 = false;
         let x = 0;
         let y = 0;
-        let i = 0;
-        let k = 0;
 
-        while (~(y = h)) {
-            while (~(x = w)) {        
-                if (map.get_cell(x, y) = -2) {
-                    if (flag) {
-                        return false;
-                    }
-                    let k = k + 1;
-                    if (k = rows[i]) {
-                        let k = 0;
-                        let i = i + 1;
-                        if (i = size_rc) {
-                            return true;
-                        }
-                        let flag = true;
-                        while (rows[i] = 0) {
-                            let i = i + 1;
-                            if (i = size_rc) {
-                                return true;
-                            }
-                        }
-                    }
+        while (~(y = cell_count)) {
+            while (~(x = cell_count)) { 
+                if (level[y * cell_count + x] = 1) {
+                    let f1 = true;
+                }       
+                if (map.get_cell(x0 + x, y0 + y) = -2) {
+                    let f2 = true;
                 }
-                let flag = false;
-                let x = x + size;
+                if (((~f1) & f2) | (f1 & (~f2))) {
+                    return false;
+                }
+                let f1 = false;
+                let f2 = false;
+                let x = x + 1;
             }
             let x = 0;
-            let y = y + size;
+            let y = y + 1;
         }
-        return false;
-    }
-
-    method boolean check_done_columns(Map map) {
-        var int x, y, i, k;
-        var boolean flag;
-
-        let flag = false;
-        let x = 0;
-        let y = 0;
-        let i = 0;
-        let k = 0;
-
-        while (~(x = w)) {
-            while (~(y = h)) {        
-                if (map.get_cell(x, y) = -2) {
-                    if (flag) {
-                        return false;
-                    }
-                    let k = k + 1;
-                    if (k = columns[i]) {
-                        let k = 0;
-                        let flag = true;
-
-                        let i = i + 1;
-                        if (i = size_rc) {
-                            return true;
-                        }
-                        while (columns[i] = 0) {
-                            let i = i + 1;
-                            if (i = size_rc) {
-                                return true;
-                            }
-                        }
-                    }
-                }
-                let flag = false;
-                let y = y + size;
-            }
-            let y = 0;
-            let x = x + size;
-        }
-        return false;
+        return true;
     }
 }
