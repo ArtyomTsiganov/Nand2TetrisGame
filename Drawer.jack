@@ -256,50 +256,6 @@ class Drawer {
         return;
     }
 
-    method void draw11(int x, int y) {
-        var int addr;
-        let addr = 16384 + (y * 32 + (x / 16)); 
-        do Memory.poke(addr +  0, 0);
-        do Memory.poke(addr + 32, 6168);
-        do Memory.poke(addr + 64, 6168);
-        do Memory.poke(addr + 96, 6168);
-        do Memory.poke(addr + 128, 6168);
-        do Memory.poke(addr + 160, 6168);
-        do Memory.poke(addr + 192, 6168);
-        do Memory.poke(addr + 224, 6168);
-        do Memory.poke(addr + 256, 6168);
-        do Memory.poke(addr + 288, 6168);
-        do Memory.poke(addr + 320, 6168);
-        do Memory.poke(addr + 352, 6168);
-        do Memory.poke(addr + 384, 6168);
-        do Memory.poke(addr + 416, 6168);
-        do Memory.poke(addr + 448, 6168);
-        do Memory.poke(addr + 480, 0);
-        return;
-    }
-
-    method void draw12(int x, int y) {
-        var int addr;
-        let addr = 16384 + (y * 32 + (x / 16)); 
-        do Memory.poke(addr +  0, 0);
-        do Memory.poke(addr + 32, 8088);
-        do Memory.poke(addr + 64, 8088);
-        do Memory.poke(addr + 96, 6168);
-        do Memory.poke(addr + 128, 6168);
-        do Memory.poke(addr + 160, 6168);
-        do Memory.poke(addr + 192, 6168);
-        do Memory.poke(addr + 224, 8088);
-        do Memory.poke(addr + 256, 8088);
-        do Memory.poke(addr + 288, 408);
-        do Memory.poke(addr + 320, 408);
-        do Memory.poke(addr + 352, 408);
-        do Memory.poke(addr + 384, 408);
-        do Memory.poke(addr + 416, 8088);
-        do Memory.poke(addr + 448, 8088);
-        do Memory.poke(addr + 480, 0);
-        return;
-    }
-
     method void drawCross(int x, int y) {
         var int addr;
         let addr = 16384 + (y * 32 + (x / 16)); 
