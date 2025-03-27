@@ -1,30 +1,591 @@
-function Level.new 0
-push constant 6
+function Level.new 1
+push constant 8
 call Memory.alloc 1
 pop pointer 0
-push argument 1
-pop this 5
-push argument 4
-push argument 0
-call Math.divide 2
-pop this 4
-push argument 5
-push argument 0
-call Math.divide 2
-pop this 3
 push argument 2
-pop this 1
+pop this 7
+push argument 5
+push argument 1
+call Math.divide 2
+pop this 6
+push argument 6
+push argument 1
+call Math.divide 2
+pop this 5
 push argument 3
-pop this 2
-push this 5
-push this 5
+pop this 3
+push argument 4
+pop this 4
+push this 7
+push this 7
 call Math.multiply 2
 call Array.new 1
 pop this 0
+push constant 6
+call Array.new 1
+pop this 1
+push constant 0
+push this 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+pop this 2
+push pointer 0
+push constant 0
+push argument 0
+call Level.change_level 3
+pop temp 0
+push pointer 0
+return
+function Level.get_level_status 0
+push argument 0
+pop pointer 0
+push argument 1
+push this 1
+add
+pop pointer 1
+push that 0
+return
+function Level.set_cur_status 0
+push argument 0
+pop pointer 0
+push this 2
+push this 1
+add
+push argument 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+function Level.change_level 0
+push argument 0
+pop pointer 0
+push this 2
+push this 1
+add
+pop pointer 1
+push that 0
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 2
+push this 1
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+label IF_FALSE0
+push argument 1
+push this 1
+add
+pop pointer 1
+push that 0
+push constant 0
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push argument 1
+push this 1
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+label IF_FALSE1
+push argument 1
+pop this 2
+push pointer 0
+call Level.clear 1
+pop temp 0
+push argument 1
+push constant 0
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
 push pointer 0
 call Level.generate_level_1 1
 pop temp 0
+label IF_FALSE2
+push argument 1
+push constant 1
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
 push pointer 0
+call Level.generate_level_2 1
+pop temp 0
+label IF_FALSE3
+push argument 1
+push constant 2
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push pointer 0
+call Level.generate_level_3 1
+pop temp 0
+label IF_FALSE4
+push argument 1
+push constant 3
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push pointer 0
+call Level.generate_level_4 1
+pop temp 0
+label IF_FALSE5
+push argument 1
+push constant 4
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push pointer 0
+call Level.generate_level_5 1
+pop temp 0
+label IF_FALSE6
+push argument 2
+call Map.clear 1
+pop temp 0
+push pointer 0
+push argument 2
+call Level.write_rows 2
+pop temp 0
+push pointer 0
+push argument 2
+call Level.write_columns 2
+pop temp 0
+push constant 0
+return
+function Level.write_rows 7
+push argument 0
+pop pointer 0
+push constant 0
+pop local 6
+push constant 6
+pop local 2
+push constant 0
+pop local 5
+push constant 0
+pop local 3
+push constant 0
+pop local 4
+push this 3
+push local 2
+sub
+pop local 0
+push this 4
+pop local 1
+label WHILE_EXP0
+push local 4
+push this 7
+eq
+not
+not
+if-goto WHILE_END0
+label WHILE_EXP1
+push local 3
+push this 7
+eq
+not
+not
+if-goto WHILE_END1
+push local 4
+push this 7
+call Math.multiply 2
+push local 3
+add
+push this 0
+add
+pop pointer 1
+push that 0
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push local 6
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push local 5
+push constant 1
+add
+pop local 5
+goto IF_END1
+label IF_FALSE1
+push local 5
+push constant 0
+eq
+not
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push argument 1
+push local 0
+push local 1
+push local 5
+call Map.set_cell 4
+pop temp 0
+label IF_FALSE2
+push local 0
+push constant 1
+add
+pop local 0
+push constant 1
+pop local 5
+label IF_END1
+push constant 0
+not
+pop local 6
+goto IF_END0
+label IF_FALSE0
+push constant 0
+pop local 6
+label IF_END0
+push local 3
+push constant 1
+add
+pop local 3
+goto WHILE_EXP1
+label WHILE_END1
+push local 5
+push constant 0
+eq
+not
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push argument 1
+push local 0
+push local 1
+push local 5
+call Map.set_cell 4
+pop temp 0
+push constant 0
+pop local 5
+push constant 0
+pop local 6
+label IF_FALSE3
+push local 1
+push constant 1
+add
+pop local 1
+push this 3
+push local 2
+sub
+pop local 0
+push constant 0
+pop local 3
+push local 4
+push constant 1
+add
+pop local 4
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Level.write_columns 7
+push argument 0
+pop pointer 0
+push constant 0
+pop local 6
+push constant 6
+pop local 2
+push constant 0
+pop local 5
+push constant 0
+pop local 3
+push constant 0
+pop local 4
+push this 3
+pop local 0
+push this 4
+push local 2
+sub
+pop local 1
+label WHILE_EXP0
+push local 3
+push this 7
+eq
+not
+not
+if-goto WHILE_END0
+label WHILE_EXP1
+push local 4
+push this 7
+eq
+not
+not
+if-goto WHILE_END1
+push local 4
+push this 7
+call Math.multiply 2
+push local 3
+add
+push this 0
+add
+pop pointer 1
+push that 0
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push local 6
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push local 5
+push constant 1
+add
+pop local 5
+goto IF_END1
+label IF_FALSE1
+push local 5
+push constant 0
+eq
+not
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push argument 1
+push local 0
+push local 1
+push local 5
+call Map.set_cell 4
+pop temp 0
+label IF_FALSE2
+push local 1
+push constant 1
+add
+pop local 1
+push constant 1
+pop local 5
+label IF_END1
+push constant 0
+not
+pop local 6
+goto IF_END0
+label IF_FALSE0
+push constant 0
+pop local 6
+label IF_END0
+push local 4
+push constant 1
+add
+pop local 4
+goto WHILE_EXP1
+label WHILE_END1
+push local 5
+push constant 0
+eq
+not
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push argument 1
+push local 0
+push local 1
+push local 5
+call Map.set_cell 4
+pop temp 0
+push constant 0
+pop local 5
+push constant 0
+pop local 6
+label IF_FALSE3
+push local 0
+push constant 1
+add
+pop local 0
+push this 4
+push local 2
+sub
+pop local 1
+push constant 0
+pop local 4
+push local 3
+push constant 1
+add
+pop local 3
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Level.check_done 4
+push argument 0
+pop pointer 0
+push constant 0
+pop local 2
+push constant 0
+pop local 3
+push constant 0
+pop local 0
+push constant 0
+pop local 1
+label WHILE_EXP0
+push local 1
+push this 7
+eq
+not
+not
+if-goto WHILE_END0
+label WHILE_EXP1
+push local 0
+push this 7
+eq
+not
+not
+if-goto WHILE_END1
+push local 1
+push this 7
+call Math.multiply 2
+push local 0
+add
+push this 0
+add
+pop pointer 1
+push that 0
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+not
+pop local 2
+label IF_FALSE0
+push argument 1
+push this 3
+push local 0
+add
+push this 4
+push local 1
+add
+call Map.get_cell 3
+push constant 2
+neg
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+not
+pop local 3
+label IF_FALSE1
+push local 2
+not
+push local 3
+and
+push local 2
+push local 3
+not
+and
+or
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push constant 0
+return
+label IF_FALSE2
+push constant 0
+pop local 2
+push constant 0
+pop local 3
+push local 0
+push constant 1
+add
+pop local 0
+goto WHILE_EXP1
+label WHILE_END1
+push constant 0
+pop local 0
+push local 1
+push constant 1
+add
+pop local 1
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+not
+return
+function Level.clear 1
+push argument 0
+pop pointer 0
+push this 7
+push this 7
+call Math.multiply 2
+pop local 0
+label WHILE_EXP0
+push local 0
+push constant 0
+eq
+not
+not
+if-goto WHILE_END0
+push local 0
+push constant 1
+sub
+pop local 0
+push local 0
+push this 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
 return
 function Level.generate_level_1 0
 push argument 0
@@ -287,356 +848,79 @@ push temp 0
 pop that 0
 push constant 0
 return
-function Level.write_rows 7
+function Level.generate_level_2 0
 push argument 0
 pop pointer 0
 push constant 0
-pop local 6
-push constant 6
-pop local 2
-push constant 0
-pop local 5
-push constant 0
-pop local 3
-push constant 0
-pop local 4
-push this 1
-push local 2
-sub
-pop local 0
-push this 2
-pop local 1
-label WHILE_EXP0
-push local 4
-push this 5
-eq
-not
-not
-if-goto WHILE_END0
-label WHILE_EXP1
-push local 3
-push this 5
-eq
-not
-not
-if-goto WHILE_END1
-push local 4
-push this 5
-call Math.multiply 2
-push local 3
-add
 push this 0
 add
+push constant 1
+pop temp 0
 pop pointer 1
-push that 0
-push constant 1
-eq
-if-goto IF_TRUE0
-goto IF_FALSE0
-label IF_TRUE0
-push local 6
-if-goto IF_TRUE1
-goto IF_FALSE1
-label IF_TRUE1
-push local 5
-push constant 1
+push temp 0
+pop that 0
+push constant 10
+push this 0
 add
-pop local 5
-goto IF_END1
-label IF_FALSE1
-push local 5
-push constant 0
-eq
-not
-if-goto IF_TRUE2
-goto IF_FALSE2
-label IF_TRUE2
-push argument 1
-push local 0
-push local 1
-push local 5
-call Map.set_cell 4
+push constant 1
 pop temp 0
-label IF_FALSE2
-push local 0
-push constant 1
+pop pointer 1
+push temp 0
+pop that 0
+push constant 20
+push this 0
 add
-pop local 0
 push constant 1
-pop local 5
-label IF_END1
-push constant 0
-not
-pop local 6
-goto IF_END0
-label IF_FALSE0
-push constant 0
-pop local 6
-label IF_END0
-push local 3
-push constant 1
-add
-pop local 3
-goto WHILE_EXP1
-label WHILE_END1
-push local 5
-push constant 0
-eq
-not
-if-goto IF_TRUE3
-goto IF_FALSE3
-label IF_TRUE3
-push argument 1
-push local 0
-push local 1
-push local 5
-call Map.set_cell 4
 pop temp 0
-push constant 0
-pop local 5
-push constant 0
-pop local 6
-label IF_FALSE3
-push local 1
-push constant 1
+pop pointer 1
+push temp 0
+pop that 0
+push constant 30
+push this 0
 add
-pop local 1
-push this 1
-push local 2
-sub
-pop local 0
-push constant 0
-pop local 3
-push local 4
 push constant 1
-add
-pop local 4
-goto WHILE_EXP0
-label WHILE_END0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push constant 0
 return
-function Level.write_columns 7
+function Level.generate_level_3 0
 push argument 0
 pop pointer 0
 push constant 0
-pop local 6
-push constant 6
-pop local 2
-push constant 0
-pop local 5
-push constant 0
-pop local 3
-push constant 0
-pop local 4
-push this 1
-pop local 0
-push this 2
-push local 2
-sub
-pop local 1
-label WHILE_EXP0
-push local 3
-push this 5
-eq
-not
-not
-if-goto WHILE_END0
-label WHILE_EXP1
-push local 4
-push this 5
-eq
-not
-not
-if-goto WHILE_END1
-push local 4
-push this 5
-call Math.multiply 2
-push local 3
-add
 push this 0
 add
+push constant 1
+pop temp 0
 pop pointer 1
-push that 0
-push constant 1
-eq
-if-goto IF_TRUE0
-goto IF_FALSE0
-label IF_TRUE0
-push local 6
-if-goto IF_TRUE1
-goto IF_FALSE1
-label IF_TRUE1
-push local 5
-push constant 1
-add
-pop local 5
-goto IF_END1
-label IF_FALSE1
-push local 5
-push constant 0
-eq
-not
-if-goto IF_TRUE2
-goto IF_FALSE2
-label IF_TRUE2
-push argument 1
-push local 0
-push local 1
-push local 5
-call Map.set_cell 4
-pop temp 0
-label IF_FALSE2
-push local 1
-push constant 1
-add
-pop local 1
-push constant 1
-pop local 5
-label IF_END1
-push constant 0
-not
-pop local 6
-goto IF_END0
-label IF_FALSE0
-push constant 0
-pop local 6
-label IF_END0
-push local 4
-push constant 1
-add
-pop local 4
-goto WHILE_EXP1
-label WHILE_END1
-push local 5
-push constant 0
-eq
-not
-if-goto IF_TRUE3
-goto IF_FALSE3
-label IF_TRUE3
-push argument 1
-push local 0
-push local 1
-push local 5
-call Map.set_cell 4
-pop temp 0
-push constant 0
-pop local 5
-push constant 0
-pop local 6
-label IF_FALSE3
-push local 0
-push constant 1
-add
-pop local 0
-push this 2
-push local 2
-sub
-pop local 1
-push constant 0
-pop local 4
-push local 3
-push constant 1
-add
-pop local 3
-goto WHILE_EXP0
-label WHILE_END0
+push temp 0
+pop that 0
 push constant 0
 return
-function Level.check_done 4
+function Level.generate_level_4 0
 push argument 0
 pop pointer 0
-push constant 0
-pop local 2
-push constant 0
-pop local 3
-push constant 0
-pop local 0
-push constant 0
-pop local 1
-label WHILE_EXP0
-push local 1
-push this 5
-eq
-not
-not
-if-goto WHILE_END0
-label WHILE_EXP1
-push local 0
-push this 5
-eq
-not
-not
-if-goto WHILE_END1
-push local 1
-push this 5
-call Math.multiply 2
-push local 0
-add
-push this 0
-add
-pop pointer 1
-push that 0
-push constant 1
-eq
-if-goto IF_TRUE0
-goto IF_FALSE0
-label IF_TRUE0
-push constant 0
-not
-pop local 2
-label IF_FALSE0
-push argument 1
-push this 1
-push local 0
-add
-push this 2
-push local 1
-add
-call Map.get_cell 3
 push constant 2
-neg
-eq
-if-goto IF_TRUE1
-goto IF_FALSE1
-label IF_TRUE1
-push constant 0
-not
-pop local 3
-label IF_FALSE1
-push local 2
-not
-push local 3
-and
-push local 2
-push local 3
-not
-and
-or
-if-goto IF_TRUE2
-goto IF_FALSE2
-label IF_TRUE2
+push this 0
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push constant 0
 return
-label IF_FALSE2
-push constant 0
-pop local 2
-push constant 0
-pop local 3
-push local 0
-push constant 1
+function Level.generate_level_5 0
+push argument 0
+pop pointer 0
+push constant 3
+push this 0
 add
-pop local 0
-goto WHILE_EXP1
-label WHILE_END1
-push constant 0
-pop local 0
-push local 1
 push constant 1
-add
-pop local 1
-goto WHILE_EXP0
-label WHILE_END0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
 push constant 0
-not
 return

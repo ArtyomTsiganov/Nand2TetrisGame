@@ -47,6 +47,39 @@ goto WHILE_EXP0
 label WHILE_END0
 push pointer 0
 return
+function Map.clear 1
+push argument 0
+pop pointer 0
+push this 1
+push this 2
+call Math.multiply 2
+push constant 1
+sub
+pop local 0
+label WHILE_EXP0
+push local 0
+push constant 0
+eq
+not
+not
+if-goto WHILE_END0
+push local 0
+push this 0
+add
+push constant 1
+neg
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
 function Map.get_cell 0
 push argument 0
 pop pointer 0

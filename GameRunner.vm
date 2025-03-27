@@ -10,7 +10,7 @@ push constant 512
 pop this 6
 push constant 256
 pop this 7
-push constant 16
+push constant 20
 pop this 8
 push constant 5
 pop this 9
@@ -29,26 +29,18 @@ call Drawer.new 4
 pop this 1
 push this 8
 push this 9
-push this 4
 push this 10
-call CursorLogic.new 4
+call CursorLogic.new 3
 pop this 0
+push this 3
 push this 4
 push this 10
 push this 8
 push this 9
 push this 6
 push this 7
-call Level.new 6
+call Level.new 7
 pop this 2
-push this 2
-push this 3
-call Level.write_rows 2
-pop temp 0
-push this 2
-push this 3
-call Level.write_columns 2
-pop temp 0
 push pointer 0
 return
 function GameRunner.run 2
@@ -69,21 +61,81 @@ push this 0
 call Drawer.eraseCursor 2
 pop temp 0
 push local 0
-push constant 81
+push constant 49
 eq
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
+push this 2
 push constant 0
-not
-pop local 1
+push this 3
+call Level.change_level 3
+pop temp 0
 label IF_FALSE0
 push local 0
-push constant 32
+push constant 50
 eq
 if-goto IF_TRUE1
 goto IF_FALSE1
 label IF_TRUE1
+push this 2
+push constant 1
+push this 3
+call Level.change_level 3
+pop temp 0
+label IF_FALSE1
+push local 0
+push constant 51
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push this 2
+push constant 2
+push this 3
+call Level.change_level 3
+pop temp 0
+label IF_FALSE2
+push local 0
+push constant 52
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push this 2
+push constant 3
+push this 3
+call Level.change_level 3
+pop temp 0
+label IF_FALSE3
+push local 0
+push constant 53
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push this 2
+push constant 4
+push this 3
+call Level.change_level 3
+pop temp 0
+label IF_FALSE4
+push local 0
+push constant 81
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push constant 0
+not
+pop local 1
+label IF_FALSE5
+push local 0
+push constant 32
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
 push this 3
 push this 0
 call CursorLogic.getX 1
@@ -91,47 +143,58 @@ push this 0
 call CursorLogic.getY 1
 call Map.change_cell 3
 pop temp 0
-label IF_FALSE1
+label IF_FALSE6
 push local 0
 push constant 131
 eq
-if-goto IF_TRUE2
-goto IF_FALSE2
-label IF_TRUE2
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
 push this 0
 call CursorLogic.moveUp 1
 pop temp 0
-label IF_FALSE2
+label IF_FALSE7
 push local 0
 push constant 133
 eq
-if-goto IF_TRUE3
-goto IF_FALSE3
-label IF_TRUE3
+if-goto IF_TRUE8
+goto IF_FALSE8
+label IF_TRUE8
 push this 0
 call CursorLogic.moveDown 1
 pop temp 0
-label IF_FALSE3
+label IF_FALSE8
 push local 0
 push constant 130
 eq
-if-goto IF_TRUE4
-goto IF_FALSE4
-label IF_TRUE4
+if-goto IF_TRUE9
+goto IF_FALSE9
+label IF_TRUE9
 push this 0
 call CursorLogic.moveLeft 1
 pop temp 0
-label IF_FALSE4
+label IF_FALSE9
 push local 0
 push constant 132
 eq
-if-goto IF_TRUE5
-goto IF_FALSE5
-label IF_TRUE5
+if-goto IF_TRUE10
+goto IF_FALSE10
+label IF_TRUE10
 push this 0
 call CursorLogic.moveRight 1
 pop temp 0
-label IF_FALSE5
+label IF_FALSE10
+push this 2
+push this 3
+call Level.check_done 2
+if-goto IF_TRUE11
+goto IF_FALSE11
+label IF_TRUE11
+push this 2
+push constant 2
+call Level.set_cur_status 2
+pop temp 0
+label IF_FALSE11
 push this 1
 push this 0
 call Drawer.drawCursor 2
@@ -147,54 +210,22 @@ push this 4
 push this 10
 call Drawer.drawGrid 5
 pop temp 0
+push this 1
+push this 2
+call Drawer.drawMenu 2
+pop temp 0
 push constant 0
 pop local 0
-push this 2
-push this 3
-call Level.check_done 2
-if-goto IF_TRUE6
-goto IF_FALSE6
-label IF_TRUE6
-push constant 7
-call String.new 1
-push constant 89
-call String.appendChar 2
-push constant 111
-call String.appendChar 2
-push constant 117
-call String.appendChar 2
-push constant 32
-call String.appendChar 2
-push constant 119
-call String.appendChar 2
-push constant 111
-call String.appendChar 2
-push constant 110
-call String.appendChar 2
-call Output.printString 1
-pop temp 0
 label WHILE_EXP1
 push local 0
 push constant 0
 eq
 not
 if-goto WHILE_END1
-push constant 1000
-call Sys.wait 1
-pop temp 0
-goto WHILE_EXP1
-label WHILE_END1
-label IF_FALSE6
-label WHILE_EXP2
-push local 0
-push constant 0
-eq
-not
-if-goto WHILE_END2
 call Keyboard.keyPressed 0
 pop local 0
-goto WHILE_EXP2
-label WHILE_END2
+goto WHILE_EXP1
+label WHILE_END1
 goto WHILE_EXP0
 label WHILE_END0
 push constant 0

@@ -20,6 +20,16 @@ class Map {
         }
         return this;
     }
+
+    method void clear() {
+        var int i;
+        let i = n * m - 1;
+        while (~(i = 0)) {
+            let map[i] = -1;
+            let i = i - 1;
+        }
+        return;
+    }
     
     // getter
     method boolean get_cell (int x, int y) {

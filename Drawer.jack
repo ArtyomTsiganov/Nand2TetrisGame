@@ -13,7 +13,7 @@ class Drawer {
         return this;
     }
 
-    // Нужно скопировать метод, переименовать, и вместо -1, вставить получившиеся числа.
+    // Рисует соответствующие изображения
     method void drawPicture(int x, int y) {
         var int addr;
         let addr = 16384 + (y * 32 + (x / 16)); 
@@ -322,7 +322,56 @@ class Drawer {
         return;
     }
 
-    // рисует сетку по цетру экрана, TODO: переделать или убрать
+    method void drawLevelStatus(Level level, int id) {
+        var int k;
+        let k = level.get_level_status(id);
+        do Output.printString("level");
+        do Output.printInt(id + 1);
+        if (k = 0) {
+            do Output.printString("...........X");
+        }
+        if (k = 1) {
+            do Output.printString(".....CURRENT");
+        }
+        if (k = 2) {
+            do Output.printString("........DONE");
+        }
+        do Output.println();
+        return;
+    }
+
+    method void drawMenu(Level level) {
+        do Output.moveCursor(0, 0);
+        do drawLevelStatus(level, 0);
+        do drawLevelStatus(level, 1);
+        do drawLevelStatus(level, 2);
+        do drawLevelStatus(level, 3);
+        do drawLevelStatus(level, 4);
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Output.println();
+        do Output.printString("1,2,3,4,5 - choose level");
+        do Output.println();
+        do Output.printString("arrows - move cursor");
+        do Output.println();
+        do Output.printString("space - paint");
+        do Output.println();
+        do Output.printString("q - exit");
+        return;
+    }
+
+    // рисует сетку, на которой мы можем перемещаться курсором
     method void drawGrid (int x, int y, int size, int count) {
         var int x1, y1, xi, yi;
         let x = size * x;
