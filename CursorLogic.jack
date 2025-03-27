@@ -14,7 +14,7 @@ class CursorLogic {
         let left_y = y0;
 
         let right_x = x0 + cnt;
-        let right_y = x0 + cnt;
+        let right_y = y0 + cnt;
         return this;
     }
     

@@ -14,7 +14,7 @@ push argument 0
 push argument 2
 add
 pop this 4
-push argument 0
+push argument 1
 push argument 2
 add
 pop this 5

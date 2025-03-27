@@ -19,16 +19,14 @@ class GameRunner {
         let w = 512;
         let h = 256;
 
-        let x0 = 16;
+        let x0 = 20;
         let y0 = 5;
         let cell_count = 10;
 
         let map = Map.new(size, w, h);
         let drawer = Drawer.new(size, padding, w, h);
-        let cursor = CursorLogic.new(x0, y0, size, cell_count);
-        let level = Level.new(size, cell_count, x0, y0, w, h);
-        do level.write_rows(map);
-        do level.write_columns(map);
+        let cursor = CursorLogic.new(x0, y0, cell_count);
+        let level = Level.new(map, size, cell_count, x0, y0, w, h);
         return this;
     }
 
@@ -43,7 +41,13 @@ class GameRunner {
             // before event
             do drawer.eraseCursor(cursor);
 
-            // event
+            // events
+            if (key = 49) {do level.change_level(0, map);} // 1 - key
+            if (key = 50) {do level.change_level(1, map);} // 2 - key
+            if (key = 51) {do level.change_level(2, map);} // 3 - key
+            if (key = 52) {do level.change_level(3, map);} // 4 - key
+            if (key = 53) {do level.change_level(4, map);} // 5 - key
+            
             if (key = 81) {let exit = true;} // q key
             if (key = 32) {do map.change_cell(cursor.getX(), cursor.getY());} // space key TODO
             if (key = 131) {do cursor.moveUp();} // up arrow key
@@ -51,19 +55,17 @@ class GameRunner {
             if (key = 130) {do cursor.moveLeft();} // left arrow key
             if (key = 132) {do cursor.moveRight();} // right arrow key
 
+            if (level.check_done(map)) {
+                do level.set_cur_status(2);
+            }
+
             // after event
             do drawer.drawCursor(cursor);
             do drawer.drawMap(map);
             do drawer.drawGrid(x0, y0, size, cell_count);
+            do drawer.drawMenu(level); 
+            
             let key = 0;      
-
-            if (level.check_done(map)) {
-                do Output.printString("You won");
-                while (key = 0) {
-                    do Sys.wait(1000);
-                }
-
-            }
 
             // check events
             while (key = 0) {

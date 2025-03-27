@@ -1,12 +1,15 @@
 class Level {
     // строки в формате (4 elems) x count, где каждая строка предсталяет собой
     field Array level;
+    field Array level_id;
     
+    field int current_id;
     field int x0, y0;
     field int n, m;
     field int cell_count;
 
-    constructor Level new(int cell_size, int count, int x, int y, int w, int h) {
+    constructor Level new(Map map, int cell_size, int count, int x, int y, int w, int h) {
+        var int i;
         let cell_count = count;
         let m = (w / cell_size);
         let n = (h / cell_size);
@@ -14,44 +17,58 @@ class Level {
         let y0 = y;
 
         let level = Array.new(cell_count * cell_count);
-        do generate_level_1();
+
+        // выбор уровней
+        let level_id = Array.new(6);
+        let level_id[0] = 0;
+        let level_id[1] = 0;
+        let level_id[2] = 0;
+        let level_id[3] = 0;
+        let level_id[4] = 0;
+        let current_id = 0;
+
+        do change_level(0, map);
         return this;
     }
 
-    method void generate_level_1() {
-        // тут в ручную нужно завести цифры рисунка
-        let level[0] = 1;
-        let level[10] = 1;
-        let level[20] = 1;
-        let level[30] = 1;
-        let level[40] = 1;
-        let level[50] = 1;
-        let level[60] = 1;
-        let level[70] = 1;
-        let level[90] = 1;
-        let level[1] = 1;
-        let level[2] = 1;
-        let level[3] = 1;
-        let level[5] = 1;
-        let level[7] = 1;
-        let level[9] = 1;
-        let level[11] = 1;
-        let level[13] = 1;
-        let level[15] = 1;
-        let level[17] = 1;
-        let level[19] = 1;
-        let level[10] = 1;
-        let level[21] = 1;
-        let level[22] = 1;
-        let level[23] = 1;
-        let level[25] = 1;
-        let level[47] = 1;
-        let level[19] = 1;
-        let level[11] = 1;
-        let level[13] = 1;
-        let level[45] = 1;
-        let level[17] = 1;
-        let level[19] = 1;
+    method int get_level_status(int id) {
+        return level_id[id];
+    }
+
+    method void set_cur_status(int val) {
+        let level_id[current_id] = val;
+        return;
+    }
+
+    method void change_level(int id, Map map) {
+        if (level_id[current_id] = 1) {
+            let level_id[current_id] = 0;
+        }
+        if (level_id[id] = 0) {
+            let level_id[id] = 1;
+        }
+
+        let current_id = id;
+        do clear();
+        
+        if (id = 0) {
+            do generate_level_1();
+        }
+        if (id = 1) {
+            do generate_level_2();
+        }    
+        if (id = 2) {
+            do generate_level_3();
+        }
+        if (id = 3) {
+            do generate_level_4();
+        }  
+        if (id = 4) {
+            do generate_level_5();
+        }
+        do map.clear();
+        do write_rows(map);
+        do write_columns(map);
         return;
     }
 
@@ -178,5 +195,75 @@ class Level {
             let y = y + 1;
         }
         return true;
+    }
+
+    method void clear() {
+        var int i;
+        let i = cell_count * cell_count;
+        while (~(i = 0)) {
+            let i = i - 1;
+            let level[i] = 0;
+        }
+        return;
+    }
+    method void generate_level_1() {
+        // тут в ручную нужно завести цифры рисунка
+        let level[0] = 1;
+        let level[10] = 1;
+        let level[20] = 1;
+        let level[30] = 1;
+        let level[40] = 1;
+        let level[50] = 1;
+        let level[60] = 1;
+        let level[70] = 1;
+        let level[90] = 1;
+        let level[1] = 1;
+        let level[2] = 1;
+        let level[3] = 1;
+        let level[5] = 1;
+        let level[7] = 1;
+        let level[9] = 1;
+        let level[11] = 1;
+        let level[13] = 1;
+        let level[15] = 1;
+        let level[17] = 1;
+        let level[19] = 1;
+        let level[10] = 1;
+        let level[21] = 1;
+        let level[22] = 1;
+        let level[23] = 1;
+        let level[25] = 1;
+        let level[47] = 1;
+        let level[19] = 1;
+        let level[11] = 1;
+        let level[13] = 1;
+        let level[45] = 1;
+        let level[17] = 1;
+        let level[19] = 1;
+        return;
+    }
+
+    method void generate_level_2() {
+        // тут в ручную нужно завести цифры рисунка
+        let level[0] = 1;
+        let level[10] = 1;
+        let level[20] = 1;
+        let level[30] = 1;
+        return;
+    }
+    method void generate_level_3() {
+        // тут в ручную нужно завести цифры рисунка
+        let level[0] = 1;
+        return;
+    }
+    method void generate_level_4() {
+        // тут в ручную нужно завести цифры рисунка
+        let level[2] = 1;
+        return;
+    }
+    method void generate_level_5() {
+        // тут в ручную нужно завести цифры рисунка
+        let level[3] = 1;
+        return;
     }
 }
