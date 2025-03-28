@@ -209,61 +209,348 @@ class Level {
     method void generate_level_1() {
         // тут в ручную нужно завести цифры рисунка
         let level[0] = 1;
-        let level[10] = 1;
-        let level[20] = 1;
-        let level[30] = 1;
-        let level[40] = 1;
-        let level[50] = 1;
-        let level[60] = 1;
-        let level[70] = 1;
-        let level[90] = 1;
         let level[1] = 1;
         let level[2] = 1;
         let level[3] = 1;
+        let level[4] = 1;
         let level[5] = 1;
+        let level[6] = 1;
         let level[7] = 1;
+        let level[8] = 1;
         let level[9] = 1;
-        let level[11] = 1;
+
+        let level[10] = 1;
+        let level[12] = 1;
         let level[13] = 1;
-        let level[15] = 1;
+        let level[16] = 1;
         let level[17] = 1;
         let level[19] = 1;
-        let level[10] = 1;
-        let level[21] = 1;
+
+        let level[20] = 1;
         let level[22] = 1;
         let level[23] = 1;
-        let level[25] = 1;
+        let level[26] = 1;
+        let level[27] = 1;
+        let level[29] = 1;
+
+        let level[30] = 1;
+        let level[32] = 1;
+        let level[33] = 1;
+        let level[36] = 1;
+        let level[37] = 1;
+        let level[39] = 1;
+
+        let level[41] = 1;
+        let level[42] = 1;
+        let level[43] = 1;
+
+        let level[46] = 1;
         let level[47] = 1;
-        let level[19] = 1;
-        let level[11] = 1;
-        let level[13] = 1;
-        let level[45] = 1;
-        let level[17] = 1;
-        let level[19] = 1;
+        let level[48] = 1;
+
+        let level[53] = 1;
+        let level[54] = 1;
+        let level[55] = 1;
+        let level[56] = 1;
+
+        let level[64] = 1;
+        let level[65] = 1;
+
+        let level[74] = 1;
+        let level[75] = 1;
+
+        let level[83] = 1;
+        let level[84] = 1;
+        let level[85] = 1;
+        let level[86] = 1;
+
+        let level[92] = 1;
+        let level[93] = 1;
+        let level[94] = 1;
+        let level[95] = 1;
+        let level[96] = 1;
+        let level[97] = 1;
         return;
     }
 
     method void generate_level_2() {
         // тут в ручную нужно завести цифры рисунка
-        let level[0] = 1;
+        let level[3] = 1;
+        let level[4] = 1;
+        let level[7] = 1;
+        let level[8] = 1;
+
         let level[10] = 1;
-        let level[20] = 1;
-        let level[30] = 1;
+        let level[11] = 1;
+        let level[12] = 1;
+        let level[14] = 1;
+        let level[16] = 1;
+        let level[17] = 1;
+        let level[18] = 1;
+        let level[19] = 1;
+        
+        let level[22] = 1;
+        let level[24] = 1;
+        let level[26] = 1;
+        let level[27] = 1;
+        let level[28] = 1;
+        let level[29] = 1;
+
+        let level[33] = 1;
+        let level[34] = 1;
+        let level[35] = 1;
+        let level[36] = 1;
+        let level[37] = 1;
+        let level[38] = 1;
+
+        let level[40] = 1;
+        let level[41] = 1;
+        let level[42] = 1;
+        let level[43] = 1;
+        let level[44] = 1;
+        let level[45] = 1;
+        let level[46] = 1;
+
+        let level[53] = 1;
+        let level[54] = 1;
+        let level[55] = 1;
+        let level[56] = 1;
+        let level[57] = 1;
+        let level[58] = 1;
+
+        let level[62] = 1;
+        let level[63] = 1;
+        let level[64] = 1;
+        let level[65] = 1;
+        let level[66] = 1;
+        let level[69] = 1;
+
+        let level[70] = 1;
+        let level[71] = 1;
+        let level[72] = 1;
+        let level[73] = 1;
+        let level[75] = 1;
+        let level[77] = 1;
+        let level[79] = 1;
+
+        let level[82] = 1;
+        let level[85] = 1;
+        let level[87] = 1;
+
+        let level[92] = 1;
+        let level[95] = 1;
+        let level[97] = 1;
         return;
     }
+    
     method void generate_level_3() {
         // тут в ручную нужно завести цифры рисунка
         let level[0] = 1;
+        let level[1] = 1;
+        let level[2] = 1;
+        let level[7] = 1;
+        let level[8] = 1;
+        let level[9] = 1;
+
+        let level[11] = 1;
+        let level[14] = 1;
+        let level[16] = 1;
+        let level[18] = 1;
+        let level[19] = 1;
+
+        let level[20] = 1;
+        let level[21] = 1;
+        let level[25] = 1;
+        let level[26] = 1;
+        let level[27] = 1;
+        let level[28] = 1;
+        let level[29] = 1;
+
+        let level[31] = 1;
+        let level[38] = 1;
+
+        let level[40] = 1;
+        let level[41] = 1;
+        let level[42] = 1;
+        let level[47] = 1;
+        let level[48] = 1;
+        let level[49] = 1;
+
+        let level[50] = 1;
+        let level[51] = 1;
+        let level[53] = 1;
+        let level[54] = 1;
+        let level[55] = 1;
+        let level[56] = 1;
+        let level[58] = 1;
+        let level[59] = 1;
+
+        let level[60] = 1;
+        let level[63] = 1;
+        let level[69] = 1;
+
+        let level[70] = 1;
+        let level[73] = 1;
+        let level[75] = 1;
+        let level[79] = 1;
+
+        let level[80] = 1;
+        let level[83] = 1;
+        let level[89] = 1;
+
+        let level[90] = 1;
+        let level[91] = 1;
+        let level[95] = 1;
+        let level[98] = 1;
+        let level[99] = 1;
         return;
     }
     method void generate_level_4() {
         // тут в ручную нужно завести цифры рисунка
-        let level[2] = 1;
+        let level[6] = 1;
+        let level[7] = 1;
+        let level[8] = 1;
+
+        let level[10] = 1;
+        let level[14] = 1;
+        let level[16] = 1;
+        let level[18] = 1;
+        let level[19] = 1;
+
+        let level[20] = 1;
+        let level[21] = 1;
+        let level[23] = 1;
+        let level[24] = 1;
+        let level[29] = 1;
+
+        let level[30] = 1;
+        let level[31] = 1;
+        let level[32] = 1;
+        let level[33] = 1;
+        let level[34] = 1;
+        let level[39] = 1;
+
+        let level[40] = 1;
+        let level[42] = 1;
+        let level[44] = 1;
+        let level[49] = 1;
+
+        let level[50] = 1;
+        let level[51] = 1;
+        let level[52] = 1;
+        let level[53] = 1;
+        let level[54] = 1;
+        let level[57] = 1;
+        let level[58] = 1;
+        let level[59] = 1;
+
+        let level[61] = 1;
+        let level[62] = 1;
+        let level[63] = 1;
+        let level[66] = 1;
+        let level[67] = 1;
+        let level[68] = 1;
+        let level[69] = 1;
+
+        let level[72] = 1;
+        let level[73] = 1;
+        let level[74] = 1;
+        let level[75] = 1;
+        let level[76] = 1;
+        let level[77] = 1;
+        let level[78] = 1;
+        let level[79] = 1;
+
+        let level[82] = 1;
+        let level[83] = 1;
+        let level[84] = 1;
+        let level[85] = 1;
+        let level[86] = 1;
+        let level[87] = 1;
+        let level[88] = 1;
+        let level[89] = 1;
+
+        let level[93] = 1;
+        let level[94] = 1;
+        let level[95] = 1;
+        let level[96] = 1;
+        let level[98] = 1;
+        let level[99] = 1;
         return;
     }
     method void generate_level_5() {
         // тут в ручную нужно завести цифры рисунка
+        let level[2] = 1;
         let level[3] = 1;
+        let level[4] = 1;
+        let level[5] = 1;
+        let level[6] = 1;
+
+        let level[11] = 1;
+        let level[17] = 1;
+
+        let level[21] = 1;
+        let level[24] = 1;
+        let level[27] = 1;
+        
+        let level[32] = 1;
+        let level[33] = 1;
+        let level[34] = 1;
+        let level[35] = 1;
+        let level[36] = 1;
+
+        let level[41] = 1;
+        let level[42] = 1;
+        let level[43] = 1;
+        let level[44] = 1;
+        let level[45] = 1;
+        let level[46] = 1;
+        let level[47] = 1;
+
+        let level[50] = 1;
+        let level[51] = 1;
+        let level[52] = 1;
+        let level[53] = 1;
+        let level[54] = 1;
+        let level[55] = 1;
+        let level[56] = 1;
+        let level[57] = 1;
+        let level[59] = 1;
+        
+        let level[60] = 1;
+        let level[62] = 1;
+        let level[63] = 1;
+        let level[64] = 1;
+        let level[65] = 1;
+        let level[66] = 1;
+        let level[67] = 1;
+        let level[68] = 1;
+        let level[69] = 1;
+
+        let level[70] = 1;
+        let level[73] = 1;
+        let level[74] = 1;
+        let level[75] = 1;
+        let level[76] = 1;
+        let level[77] = 1;
+        let level[78] = 1;
+        let level[79] = 1;
+
+        let level[80] = 1;
+        let level[81] = 1;
+        let level[84] = 1;
+        let level[85] = 1;
+        let level[86] = 1;
+        let level[87] = 1;
+        let level[88] = 1;
+
+        let level[91] = 1;
+        let level[92] = 1;
+        let level[93] = 1;
+        let level[94] = 1;
+        let level[95] = 1;
+        let level[96] = 1;
+        let level[97] = 1;
         return;
     }
 }

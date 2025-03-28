@@ -351,12 +351,13 @@ class Drawer {
     }
     
     // рисует всю карту
-    method void drawMap(Map map) {
+    method void drawMap(int x0, int y0, int cell_count, Map map) {
         var int x, y, k;
+    
         var boolean color;
         
-        let x = 0;
-        let y = 0;
+        let x = x0 - (cell_count / 2) * size;
+        let y = y0 - (cell_count / 2) * size;
 
         while (~(y = h)) {
             while (~(x = w)) {
@@ -364,8 +365,13 @@ class Drawer {
                 if (k = -1) {
                     let color = false;
                     do Screen.setColor(color);
-                    do Screen.drawRectangle(x + padding, y + padding, x + size - 1 - padding, y + size - 1 - padding);
-                }
+                    if ((x0 - 1 * size < x) & (y0 - 1 * size < y)) {
+                        do Screen.drawRectangle(x + padding, y + padding, x + size - 1 - padding, y + size - 1 - padding);
+                    }
+                    else {
+                        do Screen.drawRectangle(x, y, x + size - 1, y + size - 1);
+                    }
+                    }
                 if (k = -2) {
                     let color = true;
                     do Screen.setColor(color);
@@ -404,15 +410,9 @@ class Drawer {
                 if (k = 10) {
                     do draw10(x, y);
                 } 
-                if (k = 11) {
-                    do draw11(x, y);
-                } 
-                if (k = 12) {
-                    do draw12(x, y);
-                } 
                 let x = x + size;
             }
-            let x = 0;
+            let x = x0 - (cell_count / 2) * size;
             let y = y + size;
         }
         return;
