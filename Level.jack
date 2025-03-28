@@ -73,19 +73,19 @@ class Level {
     }
 
     method void write_rows(Map map) {
-        var int x1, y1, pad;
+        var int x1, y1;
         var int x, y, sum;
         var boolean f;
         let f = false;
-        let pad = 6;
+        
         let sum = 0;
-        let x = 0;
+        let x = cell_count - 1;
         let y = 0;
-        let x1 = x0 - pad;
+        let x1 = x0;
         let y1 = y0;
         
         while (~(y = cell_count)) {
-            while (~(x = cell_count)) { 
+            while (~(x + 1 = 0)) { 
                 // р
                 if (level[y * cell_count + x] = 1) {
                     if (f) {
@@ -94,7 +94,7 @@ class Level {
                         if (~(sum = 0)) {
                             do map.set_cell(x1, y1, sum);
                         }
-                        let x1 = x1 + 1;
+                        let x1 = x1 - 1;
                         let sum = 1;
                     }
                     let f = true;
@@ -102,7 +102,7 @@ class Level {
                     let f = false;
                 }
                 // цикл
-                let x = x + 1;
+                let x = x - 1;
             }
             // р
             if (~(sum = 0)) {
@@ -111,29 +111,28 @@ class Level {
                 let f = false;
             }
             let y1 = y1 + 1;
-            let x1 = x0 - pad;
+            let x1 = x0;
 
             // цикл
-            let x = 0;
+            let x = cell_count- 1;
             let y = y + 1;
         }
         return;
     }
 
     method void write_columns(Map map) {
-        var int x1, y1, pad;
+        var int x1, y1;
         var int x, y, sum;
         var boolean f;
         let f = false;
-        let pad = 6;
         let sum = 0;
         let x = 0;
-        let y = 0;
+        let y = cell_count - 1;
         let x1 = x0;
-        let y1 = y0 - pad;
+        let y1 = y0;
         
         while (~(x = cell_count)) {
-            while (~(y = cell_count)) { 
+            while (~(y + 1 = 0)) { 
                 // р
                 if (level[y * cell_count + x] = 1) {
                     if (f) {
@@ -142,7 +141,7 @@ class Level {
                         if (~(sum = 0)) {
                             do map.set_cell(x1, y1, sum);
                         }
-                        let y1 = y1 + 1;
+                        let y1 = y1 - 1;
                         let sum = 1;
                     }
                     let f = true;
@@ -150,7 +149,7 @@ class Level {
                     let f = false;
                 }
                 // цикл
-                let y = y + 1;
+                let y = y - 1;
             }
             // р
             if (~(sum = 0)) {
@@ -159,10 +158,10 @@ class Level {
                 let f = false;
             }
             let x1 = x1 + 1;
-            let y1 = y0 - pad;
+            let y1 = y0;
 
             // цикл
-            let y = 0;
+            let y = cell_count - 1;
             let x = x + 1;
         }
         return;
@@ -197,15 +196,25 @@ class Level {
         return true;
     }
 
+
+    method void dispose() {
+        do level.dispose();
+        do level_id.dispose();
+        do Memory.deAlloc(this);
+        return;
+    }
+
+
     method void clear() {
         var int i;
-        let i = cell_count * cell_count;
-        while (~(i = 0)) {
-            let i = i - 1;
+        let i = 0;
+        while (~(i = (cell_count * cell_count))) {
             let level[i] = 0;
+            let i = i + 1;
         }
         return;
     }
+
     method void generate_level_1() {
         // тут в ручную нужно завести цифры рисунка
         let level[0] = 1;
@@ -272,7 +281,6 @@ class Level {
         let level[97] = 1;
         return;
     }
-
     method void generate_level_2() {
         // тут в ручную нужно завести цифры рисунка
         let level[3] = 1;
@@ -342,7 +350,6 @@ class Level {
         let level[97] = 1;
         return;
     }
-    
     method void generate_level_3() {
         // тут в ручную нужно завести цифры рисунка
         let level[0] = 1;

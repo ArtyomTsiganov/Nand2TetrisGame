@@ -204,43 +204,43 @@ call Level.write_columns 2
 pop temp 0
 push constant 0
 return
-function Level.write_rows 7
+function Level.write_rows 6
 push argument 0
 pop pointer 0
 push constant 0
-pop local 6
-push constant 6
-pop local 2
-push constant 0
 pop local 5
 push constant 0
-pop local 3
-push constant 0
 pop local 4
-push this 3
-push local 2
+push this 7
+push constant 1
 sub
+pop local 2
+push constant 0
+pop local 3
+push this 3
 pop local 0
 push this 4
 pop local 1
 label WHILE_EXP0
-push local 4
+push local 3
 push this 7
 eq
 not
 not
 if-goto WHILE_END0
 label WHILE_EXP1
-push local 3
-push this 7
+push local 2
+push constant 1
+add
+push constant 0
 eq
 not
 not
 if-goto WHILE_END1
-push local 4
+push local 3
 push this 7
 call Math.multiply 2
-push local 3
+push local 2
 add
 push this 0
 add
@@ -251,17 +251,17 @@ eq
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
-push local 6
+push local 5
 if-goto IF_TRUE1
 goto IF_FALSE1
 label IF_TRUE1
-push local 5
+push local 4
 push constant 1
 add
-pop local 5
+pop local 4
 goto IF_END1
 label IF_FALSE1
-push local 5
+push local 4
 push constant 0
 eq
 not
@@ -271,32 +271,32 @@ label IF_TRUE2
 push argument 1
 push local 0
 push local 1
-push local 5
+push local 4
 call Map.set_cell 4
 pop temp 0
 label IF_FALSE2
 push local 0
 push constant 1
-add
+sub
 pop local 0
 push constant 1
-pop local 5
+pop local 4
 label IF_END1
 push constant 0
 not
-pop local 6
+pop local 5
 goto IF_END0
 label IF_FALSE0
 push constant 0
-pop local 6
+pop local 5
 label IF_END0
-push local 3
+push local 2
 push constant 1
-add
-pop local 3
+sub
+pop local 2
 goto WHILE_EXP1
 label WHILE_END1
-push local 5
+push local 4
 push constant 0
 eq
 not
@@ -306,69 +306,69 @@ label IF_TRUE3
 push argument 1
 push local 0
 push local 1
-push local 5
+push local 4
 call Map.set_cell 4
 pop temp 0
 push constant 0
-pop local 5
+pop local 4
 push constant 0
-pop local 6
+pop local 5
 label IF_FALSE3
 push local 1
 push constant 1
 add
 pop local 1
 push this 3
-push local 2
-sub
 pop local 0
-push constant 0
-pop local 3
-push local 4
+push this 7
+push constant 1
+sub
+pop local 2
+push local 3
 push constant 1
 add
-pop local 4
+pop local 3
 goto WHILE_EXP0
 label WHILE_END0
 push constant 0
 return
-function Level.write_columns 7
+function Level.write_columns 6
 push argument 0
 pop pointer 0
 push constant 0
-pop local 6
-push constant 6
-pop local 2
-push constant 0
 pop local 5
 push constant 0
-pop local 3
-push constant 0
 pop local 4
+push constant 0
+pop local 2
+push this 7
+push constant 1
+sub
+pop local 3
 push this 3
 pop local 0
 push this 4
-push local 2
-sub
 pop local 1
 label WHILE_EXP0
-push local 3
+push local 2
 push this 7
 eq
 not
 not
 if-goto WHILE_END0
 label WHILE_EXP1
-push local 4
-push this 7
+push local 3
+push constant 1
+add
+push constant 0
 eq
 not
 not
 if-goto WHILE_END1
-push local 4
+push local 3
 push this 7
 call Math.multiply 2
-push local 3
+push local 2
 add
 push this 0
 add
@@ -379,17 +379,17 @@ eq
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
-push local 6
+push local 5
 if-goto IF_TRUE1
 goto IF_FALSE1
 label IF_TRUE1
-push local 5
+push local 4
 push constant 1
 add
-pop local 5
+pop local 4
 goto IF_END1
 label IF_FALSE1
-push local 5
+push local 4
 push constant 0
 eq
 not
@@ -399,32 +399,32 @@ label IF_TRUE2
 push argument 1
 push local 0
 push local 1
-push local 5
+push local 4
 call Map.set_cell 4
 pop temp 0
 label IF_FALSE2
 push local 1
 push constant 1
-add
+sub
 pop local 1
 push constant 1
-pop local 5
+pop local 4
 label IF_END1
 push constant 0
 not
-pop local 6
+pop local 5
 goto IF_END0
 label IF_FALSE0
 push constant 0
-pop local 6
+pop local 5
 label IF_END0
-push local 4
+push local 3
 push constant 1
-add
-pop local 4
+sub
+pop local 3
 goto WHILE_EXP1
 label WHILE_END1
-push local 5
+push local 4
 push constant 0
 eq
 not
@@ -434,28 +434,28 @@ label IF_TRUE3
 push argument 1
 push local 0
 push local 1
-push local 5
+push local 4
 call Map.set_cell 4
 pop temp 0
 push constant 0
-pop local 5
+pop local 4
 push constant 0
-pop local 6
+pop local 5
 label IF_FALSE3
 push local 0
 push constant 1
 add
 pop local 0
 push this 4
-push local 2
-sub
 pop local 1
-push constant 0
-pop local 4
-push local 3
+push this 7
+push constant 1
+sub
+pop local 3
+push local 2
 push constant 1
 add
-pop local 3
+pop local 2
 goto WHILE_EXP0
 label WHILE_END0
 push constant 0
@@ -557,24 +557,34 @@ label WHILE_END0
 push constant 0
 not
 return
+function Level.dispose 0
+push argument 0
+pop pointer 0
+push this 0
+call Array.dispose 1
+pop temp 0
+push this 1
+call Array.dispose 1
+pop temp 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
 function Level.clear 1
 push argument 0
 pop pointer 0
-push this 7
-push this 7
-call Math.multiply 2
+push constant 0
 pop local 0
 label WHILE_EXP0
 push local 0
-push constant 0
+push this 7
+push this 7
+call Math.multiply 2
 eq
 not
 not
 if-goto WHILE_END0
-push local 0
-push constant 1
-sub
-pop local 0
 push local 0
 push this 0
 add
@@ -583,6 +593,10 @@ pop temp 0
 pop pointer 1
 push temp 0
 pop that 0
+push local 0
+push constant 1
+add
+pop local 0
 goto WHILE_EXP0
 label WHILE_END0
 push constant 0

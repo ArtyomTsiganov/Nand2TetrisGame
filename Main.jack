@@ -4,6 +4,7 @@ class Main {
 
         let game = GameRunner.new();
         do game.run();
+        do game.dispose();
         return;
     }
 }

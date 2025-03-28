@@ -13,20 +13,20 @@ class Map {
         let map = Array.new(n * m);
 
         // заполняет весь массив -1
-        let i = n * m - 1;
-        while (~(i = 0)) {
+        let i = 0;
+        while (~(i = (n * m))) {
             let map[i] = -1;
-            let i = i - 1;
+            let i = i + 1;
         }
         return this;
     }
 
     method void clear() {
         var int i;
-        let i = n * m - 1;
-        while (~(i = 0)) {
+        let i = 0;
+        while (~(i = (n * m))) {
             let map[i] = -1;
-            let i = i - 1;
+            let i = i + 1;
         }
         return;
     }
@@ -55,6 +55,12 @@ class Map {
             let map[y * m + x] = -1;
             return;
         }
+        return;
+    }
+    
+    method void dispose() {
+        do map.dispose();
+        do Memory.deAlloc(this);
         return;
     }
 }

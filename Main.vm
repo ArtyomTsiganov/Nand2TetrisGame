@@ -4,5 +4,8 @@ pop local 0
 push local 0
 call GameRunner.run 1
 pop temp 0
+push local 0
+call GameRunner.dispose 1
+pop temp 0
 push constant 0
 return

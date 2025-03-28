@@ -353,7 +353,6 @@ class Drawer {
     // рисует всю карту
     method void drawMap(int x0, int y0, int cell_count, Map map) {
         var int x, y, k;
-    
         var boolean color;
         
         let x = x0 - (cell_count / 2) * size;
@@ -438,6 +437,11 @@ class Drawer {
         let y = size * cursor.getY();
         do Screen.setColor(false);
         do Screen.drawRectangle(x, y, x + size - 1, y + size - 1);
+        return;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
         return;
     }
 }

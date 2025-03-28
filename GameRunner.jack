@@ -43,14 +43,14 @@ class GameRunner {
             do drawer.eraseCursor(cursor);
 
             // events
-            if (key = 49) {do level.change_level(0, map);do drawer.drawMenu(level);} // 1 - key
-            if (key = 50) {do level.change_level(1, map);do drawer.drawMenu(level);} // 2 - key
-            if (key = 51) {do level.change_level(2, map);do drawer.drawMenu(level);} // 3 - key
-            if (key = 52) {do level.change_level(3, map);do drawer.drawMenu(level);} // 4 - key
-            if (key = 53) {do level.change_level(4, map);do drawer.drawMenu(level);} // 5 - key
+            if (key = 49) {do level.change_level(0, map);do drawer.drawMenu(level);do Sys.wait(300);} // 1 - key
+            if (key = 50) {do level.change_level(1, map);do drawer.drawMenu(level);do Sys.wait(300);} // 2 - key
+            if (key = 51) {do level.change_level(2, map);do drawer.drawMenu(level);do Sys.wait(300);} // 3 - key
+            if (key = 52) {do level.change_level(3, map);do drawer.drawMenu(level);do Sys.wait(300);} // 4 - key
+            if (key = 53) {do level.change_level(4, map);do drawer.drawMenu(level);do Sys.wait(300);} // 5 - key
             
             if (key = 81) {let exit = true;} // q key
-            if (key = 32) {do map.change_cell(cursor.getX(), cursor.getY()); do Sys.wait(100);} // space key TODO
+            if (key = 32) {do map.change_cell(cursor.getX(), cursor.getY()); do Sys.wait(150);} // space key TODO
             if (key = 131) {do cursor.moveUp();} // up arrow key
             if (key = 133) {do cursor.moveDown();} // down arrow key
             if (key = 130) {do cursor.moveLeft();} // left arrow key
@@ -65,7 +65,6 @@ class GameRunner {
             do drawer.drawCursor(cursor);
             do drawer.drawMap(x0, y0, cell_count, map);
             do drawer.drawGrid(x0, y0, size, cell_count);
-             
             
             let key = 0;      
 
@@ -74,6 +73,15 @@ class GameRunner {
                 let key = Keyboard.keyPressed();
             }
         }
+        return;
+    }
+
+    method void dispose() {
+        do cursor.dispose();
+        do drawer.dispose();
+        do level.dispose();
+        do map.dispose();
+        do Memory.deAlloc(this);
         return;
     }
 }

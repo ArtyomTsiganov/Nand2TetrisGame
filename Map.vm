@@ -17,15 +17,13 @@ push this 2
 call Math.multiply 2
 call Array.new 1
 pop this 0
-push this 1
-push this 2
-call Math.multiply 2
-push constant 1
-sub
+push constant 0
 pop local 0
 label WHILE_EXP0
 push local 0
-push constant 0
+push this 1
+push this 2
+call Math.multiply 2
 eq
 not
 not
@@ -41,7 +39,7 @@ push temp 0
 pop that 0
 push local 0
 push constant 1
-sub
+add
 pop local 0
 goto WHILE_EXP0
 label WHILE_END0
@@ -50,15 +48,13 @@ return
 function Map.clear 1
 push argument 0
 pop pointer 0
-push this 1
-push this 2
-call Math.multiply 2
-push constant 1
-sub
+push constant 0
 pop local 0
 label WHILE_EXP0
 push local 0
-push constant 0
+push this 1
+push this 2
+call Math.multiply 2
 eq
 not
 not
@@ -74,7 +70,7 @@ push temp 0
 pop that 0
 push local 0
 push constant 1
-sub
+add
 pop local 0
 goto WHILE_EXP0
 label WHILE_END0
@@ -206,5 +202,16 @@ pop that 0
 push constant 0
 return
 label IF_FALSE2
+push constant 0
+return
+function Map.dispose 0
+push argument 0
+pop pointer 0
+push this 0
+call Array.dispose 1
+pop temp 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
 push constant 0
 return
