@@ -1,44 +1,66 @@
 function GameRunner.new 0
-push constant 11
+push constant 16
 call Memory.alloc 1
 pop pointer 0
 push constant 16
-pop this 4
-push constant 2
-pop this 5
-push constant 512
-pop this 6
-push constant 256
-pop this 7
-push constant 20
-pop this 8
-push constant 5
 pop this 9
-push constant 10
+push constant 2
 pop this 10
-push this 4
-push this 6
-push this 7
+push constant 512
+pop this 11
+push constant 256
+pop this 12
+push constant 20
+pop this 13
+push constant 5
+pop this 14
+push constant 10
+pop this 15
+push this 9
+push this 11
+push this 12
 call Map.new 3
-pop this 3
+pop this 4
+push this 9
+push this 11
+push this 12
+call Map.new 3
+pop this 5
+push this 9
+push this 11
+push this 12
+call Map.new 3
+pop this 6
+push this 9
+push this 11
+push this 12
+call Map.new 3
+pop this 7
+push this 9
+push this 11
+push this 12
+call Map.new 3
+pop this 8
 push this 4
-push this 5
-push this 6
-push this 7
-call Drawer.new 4
-pop this 1
-push this 8
+pop this 3
 push this 9
 push this 10
+push this 11
+push this 12
+call Drawer.new 4
+pop this 1
+push this 13
+push this 14
+push this 15
 call CursorLogic.new 3
 pop this 0
 push this 3
-push this 4
-push this 10
-push this 8
 push this 9
-push this 6
-push this 7
+push this 15
+push this 13
+push this 14
+push this 11
+push this 12
 call Level.new 7
 pop this 2
 push pointer 0
@@ -57,7 +79,7 @@ push local 1
 not
 not
 if-goto WHILE_END0
-push constant 50
+push constant 90
 call Sys.wait 1
 pop temp 0
 push this 1
@@ -70,6 +92,8 @@ eq
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
+push this 4
+pop this 3
 push this 2
 push constant 0
 push this 3
@@ -79,9 +103,6 @@ push this 1
 push this 2
 call Drawer.drawMenu 2
 pop temp 0
-push constant 300
-call Sys.wait 1
-pop temp 0
 label IF_FALSE0
 push local 0
 push constant 50
@@ -89,6 +110,8 @@ eq
 if-goto IF_TRUE1
 goto IF_FALSE1
 label IF_TRUE1
+push this 5
+pop this 3
 push this 2
 push constant 1
 push this 3
@@ -98,9 +121,6 @@ push this 1
 push this 2
 call Drawer.drawMenu 2
 pop temp 0
-push constant 300
-call Sys.wait 1
-pop temp 0
 label IF_FALSE1
 push local 0
 push constant 51
@@ -108,6 +128,8 @@ eq
 if-goto IF_TRUE2
 goto IF_FALSE2
 label IF_TRUE2
+push this 6
+pop this 3
 push this 2
 push constant 2
 push this 3
@@ -117,9 +139,6 @@ push this 1
 push this 2
 call Drawer.drawMenu 2
 pop temp 0
-push constant 300
-call Sys.wait 1
-pop temp 0
 label IF_FALSE2
 push local 0
 push constant 52
@@ -127,6 +146,8 @@ eq
 if-goto IF_TRUE3
 goto IF_FALSE3
 label IF_TRUE3
+push this 7
+pop this 3
 push this 2
 push constant 3
 push this 3
@@ -136,9 +157,6 @@ push this 1
 push this 2
 call Drawer.drawMenu 2
 pop temp 0
-push constant 300
-call Sys.wait 1
-pop temp 0
 label IF_FALSE3
 push local 0
 push constant 53
@@ -146,6 +164,8 @@ eq
 if-goto IF_TRUE4
 goto IF_FALSE4
 label IF_TRUE4
+push this 8
+pop this 3
 push this 2
 push constant 4
 push this 3
@@ -154,9 +174,6 @@ pop temp 0
 push this 1
 push this 2
 call Drawer.drawMenu 2
-pop temp 0
-push constant 300
-call Sys.wait 1
 pop temp 0
 label IF_FALSE4
 push local 0
@@ -181,9 +198,6 @@ call CursorLogic.getX 1
 push this 0
 call CursorLogic.getY 1
 call Map.change_cell 3
-pop temp 0
-push constant 150
-call Sys.wait 1
 pop temp 0
 label IF_FALSE6
 push local 0
@@ -246,17 +260,17 @@ push this 0
 call Drawer.drawCursor 2
 pop temp 0
 push this 1
-push this 8
-push this 9
-push this 10
+push this 13
+push this 14
+push this 15
 push this 3
 call Drawer.drawMap 5
 pop temp 0
 push this 1
-push this 8
+push this 13
+push this 14
 push this 9
-push this 4
-push this 10
+push this 15
 call Drawer.drawGrid 5
 pop temp 0
 push constant 0

@@ -3,7 +3,12 @@ class GameRunner {
     field CursorLogic cursor;
     field Drawer drawer;
     field Level level;
-    field Map map;
+    field Map current_map;
+    field Map map1;
+    field Map map2;
+    field Map map3;
+    field Map map4;
+    field Map map5;
 
     field int size, padding;
     field int w, h;
@@ -23,10 +28,15 @@ class GameRunner {
         let y0 = 5;
         let cell_count = 10; // pad = cell_count / 2;
 
-        let map = Map.new(size, w, h);
+        let map1 = Map.new(size, w, h);
+        let map2 = Map.new(size, w, h);
+        let map3 = Map.new(size, w, h);
+        let map4 = Map.new(size, w, h);
+        let map5 = Map.new(size, w, h);
+        let current_map = map1;
         let drawer = Drawer.new(size, padding, w, h);
         let cursor = CursorLogic.new(x0, y0, cell_count);
-        let level = Level.new(map, size, cell_count, x0, y0, w, h);
+        let level = Level.new(current_map, size, cell_count, x0, y0, w, h);
         return this;
     }
 
@@ -38,32 +48,32 @@ class GameRunner {
         let exit = false;
         do drawer.drawMenu(level);
         while (~exit) {    
-            do Sys.wait(50);         
+            do Sys.wait(90);
             // before event
             do drawer.eraseCursor(cursor);
 
             // events
-            if (key = 49) {do level.change_level(0, map);do drawer.drawMenu(level);do Sys.wait(300);} // 1 - key
-            if (key = 50) {do level.change_level(1, map);do drawer.drawMenu(level);do Sys.wait(300);} // 2 - key
-            if (key = 51) {do level.change_level(2, map);do drawer.drawMenu(level);do Sys.wait(300);} // 3 - key
-            if (key = 52) {do level.change_level(3, map);do drawer.drawMenu(level);do Sys.wait(300);} // 4 - key
-            if (key = 53) {do level.change_level(4, map);do drawer.drawMenu(level);do Sys.wait(300);} // 5 - key
+            if (key = 49) {let current_map = map1;do level.change_level(0, current_map);do drawer.drawMenu(level);} // 1 - key
+            if (key = 50) {let current_map = map2;do level.change_level(1, current_map);do drawer.drawMenu(level);} // 2 - key
+            if (key = 51) {let current_map = map3;do level.change_level(2, current_map);do drawer.drawMenu(level);} // 3 - key
+            if (key = 52) {let current_map = map4;do level.change_level(3, current_map);do drawer.drawMenu(level);} // 4 - key
+            if (key = 53) {let current_map = map5;do level.change_level(4, current_map);do drawer.drawMenu(level);} // 5 - key
             
             if (key = 81) {let exit = true;} // q key
-            if (key = 32) {do map.change_cell(cursor.getX(), cursor.getY()); do Sys.wait(150);} // space key TODO
+            if (key = 32) {do current_map.change_cell(cursor.getX(), cursor.getY());} // space key TODO
             if (key = 131) {do cursor.moveUp();} // up arrow key
             if (key = 133) {do cursor.moveDown();} // down arrow key
             if (key = 130) {do cursor.moveLeft();} // left arrow key
             if (key = 132) {do cursor.moveRight();} // right arrow key
 
-            if (level.check_done(map)) {
+            if (level.check_done(current_map)) {
                 do level.set_cur_status(2);
                 do drawer.drawMenu(level);
             }
             
             // after event
             do drawer.drawCursor(cursor);
-            do drawer.drawMap(x0, y0, cell_count, map);
+            do drawer.drawMap(x0, y0, cell_count, current_map);
             do drawer.drawGrid(x0, y0, size, cell_count);
             
             let key = 0;      
@@ -80,7 +90,7 @@ class GameRunner {
         do cursor.dispose();
         do drawer.dispose();
         do level.dispose();
-        do map.dispose();
+        do current_map.dispose();
         do Memory.deAlloc(this);
         return;
     }

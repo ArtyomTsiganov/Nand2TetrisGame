@@ -280,50 +280,65 @@ class Drawer {
 
     method void drawLevelStatus(Level level, int id) {
         var int k;
+        var String line;
         let k = level.get_level_status(id);
-        do Output.printString("level");
+        let line = "level ";
+        do Output.printString(line);
+        do line.dispose();
         do Output.printInt(id + 1);
         if (k = 0) {
-            do Output.printString("...........X");
+            let line = "................X";
+            do Output.printString(line);
         }
         if (k = 1) {
-            do Output.printString(".....CURRENT");
+            let line = "..........CURRENT";
+            do Output.printString(line);
         }
         if (k = 2) {
-            do Output.printString("........DONE");
+            let line = ".............DONE";
+            do Output.printString(line);
         }
+        do line.dispose();
+
         do Output.println();
         return;
     }
 
     method void drawMenu(Level level) {
+        var int k;
+        var String line;
         do Output.moveCursor(0, 0);
-        do drawLevelStatus(level, 0);
-        do drawLevelStatus(level, 1);
-        do drawLevelStatus(level, 2);
-        do drawLevelStatus(level, 3);
-        do drawLevelStatus(level, 4);
+        let k = 0;
+        while (~(k = 5)){
+            do drawLevelStatus(level, k);
+            let k = k + 1;
+        }
+        let k = 0;
+        while (~(k = 14)) {
+            do Output.println();
+            let k = k + 1;
+        }
+        let line = "1,2,3,4,5 - choose level";
+        do Output.printString(line);
+        do line.dispose();
+
         do Output.println();
+
+        let line = "   arrows - move cursor";
+        do Output.printString(line);
+        do line.dispose();
+
         do Output.println();
+
+        let line = "    space - paint";
+        do Output.printString(line);
+        do line.dispose();
+
         do Output.println();
-        do Output.println();
-        do Output.println();
-        do Output.println();
-        do Output.println();
-        do Output.println();
-        do Output.println();
-        do Output.println();
-        do Output.println();
-        do Output.println();
-        do Output.println();
-        do Output.println();
-        do Output.printString("1,2,3,4,5 - choose level");
-        do Output.println();
-        do Output.printString("arrows - move cursor");
-        do Output.println();
-        do Output.printString("space - paint");
-        do Output.println();
-        do Output.printString("q - exit");
+
+        let line = "        q - exit";
+        do Output.printString(line);
+        do line.dispose();
         return;
     }
 

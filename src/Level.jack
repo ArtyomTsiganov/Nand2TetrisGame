@@ -66,7 +66,7 @@ class Level {
         if (id = 4) {
             do generate_level_5();
         }
-        do map.clear();
+        //do map.clear();
         do write_rows(map);
         do write_columns(map);
         return;
