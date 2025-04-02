@@ -1,5 +1,4 @@
 class Level {
-    // строки в формате (4 elems) x count, где каждая строка предсталяет собой
     field Array level;
     field Array level_id;
     
@@ -33,6 +32,10 @@ class Level {
 
     method int get_level_status(int id) {
         return level_id[id];
+    }
+
+    method int get_cur_status(int id) {
+        return level_id[current_id];
     }
 
     method void set_cur_status(int val) {
@@ -84,9 +87,10 @@ class Level {
         let x1 = x0;
         let y1 = y0;
         
+        
         while (~(y = cell_count)) {
             while (~(x + 1 = 0)) { 
-                // р
+                // тело цикла
                 if (level[y * cell_count + x] = 1) {
                     if (f) {
                         let sum = sum + 1;
@@ -104,7 +108,7 @@ class Level {
                 // цикл
                 let x = x - 1;
             }
-            // р
+            // тело цикла
             if (~(sum = 0)) {
                 do map.set_cell(x1, y1, sum);
                 let sum = 0;
@@ -133,7 +137,7 @@ class Level {
         
         while (~(x = cell_count)) {
             while (~(y + 1 = 0)) { 
-                // р
+                // тело цикла
                 if (level[y * cell_count + x] = 1) {
                     if (f) {
                         let sum = sum + 1;
@@ -151,7 +155,7 @@ class Level {
                 // цикл
                 let y = y - 1;
             }
-            // р
+            // тело цикла
             if (~(sum = 0)) {
                 do map.set_cell(x1, y1, sum);
                 let sum = 0;
@@ -196,14 +200,12 @@ class Level {
         return true;
     }
 
-
     method void dispose() {
         do level.dispose();
         do level_id.dispose();
         do Memory.deAlloc(this);
         return;
     }
-
 
     method void clear() {
         var int i;
@@ -281,6 +283,7 @@ class Level {
         let level[97] = 1;
         return;
     }
+
     method void generate_level_2() {
         // тут в ручную нужно завести цифры рисунка
         let level[3] = 1;
@@ -350,6 +353,7 @@ class Level {
         let level[97] = 1;
         return;
     }
+
     method void generate_level_3() {
         // тут в ручную нужно завести цифры рисунка
         let level[0] = 1;
@@ -412,6 +416,7 @@ class Level {
         let level[99] = 1;
         return;
     }
+
     method void generate_level_4() {
         // тут в ручную нужно завести цифры рисунка
         let level[6] = 1;
@@ -485,6 +490,7 @@ class Level {
         let level[99] = 1;
         return;
     }
+    
     method void generate_level_5() {
         // тут в ручную нужно завести цифры рисунка
         let level[2] = 1;

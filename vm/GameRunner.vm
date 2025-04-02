@@ -99,10 +99,6 @@ push constant 0
 push this 3
 call Level.change_level 3
 pop temp 0
-push this 1
-push this 2
-call Drawer.drawMenu 2
-pop temp 0
 label IF_FALSE0
 push local 0
 push constant 50
@@ -116,10 +112,6 @@ push this 2
 push constant 1
 push this 3
 call Level.change_level 3
-pop temp 0
-push this 1
-push this 2
-call Drawer.drawMenu 2
 pop temp 0
 label IF_FALSE1
 push local 0
@@ -135,10 +127,6 @@ push constant 2
 push this 3
 call Level.change_level 3
 pop temp 0
-push this 1
-push this 2
-call Drawer.drawMenu 2
-pop temp 0
 label IF_FALSE2
 push local 0
 push constant 52
@@ -153,10 +141,6 @@ push constant 3
 push this 3
 call Level.change_level 3
 pop temp 0
-push this 1
-push this 2
-call Drawer.drawMenu 2
-pop temp 0
 label IF_FALSE3
 push local 0
 push constant 53
@@ -170,10 +154,6 @@ push this 2
 push constant 4
 push this 3
 call Level.change_level 3
-pop temp 0
-push this 1
-push this 2
-call Drawer.drawMenu 2
 pop temp 0
 label IF_FALSE4
 push local 0
@@ -250,11 +230,21 @@ push this 2
 push constant 2
 call Level.set_cur_status 2
 pop temp 0
-push this 1
-push this 2
-call Drawer.drawMenu 2
-pop temp 0
+goto IF_END11
 label IF_FALSE11
+push this 2
+call Level.get_cur_status 1
+push constant 2
+eq
+if-goto IF_TRUE12
+goto IF_FALSE12
+label IF_TRUE12
+push this 2
+push constant 1
+call Level.set_cur_status 2
+pop temp 0
+label IF_FALSE12
+label IF_END11
 push this 1
 push this 0
 call Drawer.drawCursor 2
@@ -272,6 +262,10 @@ push this 14
 push this 9
 push this 15
 call Drawer.drawGrid 5
+pop temp 0
+push this 1
+push this 2
+call Drawer.drawMenu 2
 pop temp 0
 push constant 0
 pop local 0

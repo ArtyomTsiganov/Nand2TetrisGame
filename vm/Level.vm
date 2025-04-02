@@ -82,6 +82,15 @@ add
 pop pointer 1
 push that 0
 return
+function Level.get_cur_status 0
+push argument 0
+pop pointer 0
+push this 2
+push this 1
+add
+pop pointer 1
+push that 0
+return
 function Level.set_cur_status 0
 push argument 0
 pop pointer 0
