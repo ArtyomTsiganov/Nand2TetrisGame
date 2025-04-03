@@ -179,6 +179,9 @@ push this 0
 call CursorLogic.getY 1
 call Map.change_cell 3
 pop temp 0
+push constant 90
+call Sys.wait 1
+pop temp 0
 label IF_FALSE6
 push local 0
 push constant 131
