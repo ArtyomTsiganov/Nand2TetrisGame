@@ -60,7 +60,7 @@ class GameRunner {
             if (key = 53) {let current_map = map5;do level.change_level(4, current_map);} // 5 - key
             
             if (key = 81) {let exit = true;} // q key
-            if (key = 32) {do current_map.change_cell(cursor.getX(), cursor.getY());} // space key TODO
+            if (key = 32) {do current_map.change_cell(cursor.getX(), cursor.getY());do Sys.wait(90);} // space key TODO
             if (key = 131) {do cursor.moveUp();} // up arrow key
             if (key = 133) {do cursor.moveDown();} // down arrow key
             if (key = 130) {do cursor.moveLeft();} // left arrow key
