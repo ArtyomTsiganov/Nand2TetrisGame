@@ -34,7 +34,7 @@ class Level {
         return level_id[id];
     }
 
-    method int get_cur_status(int id) {
+    method int get_cur_status() {
         return level_id[current_id];
     }
 
